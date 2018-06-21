@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-21 11:07+0200\n"
+"POT-Creation-Date: 2018-06-21 11:27+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Raphael Michel\n"
 "Language-Team: \n"
@@ -61,13 +61,7 @@ msgstr ""
 msgid "API URL"
 msgstr ""
 
-#: pretix_bitpay/payment.py:142
-msgid ""
-"We had trouble communicating with Sofort. Please try again and get in touch "
-"with us if this problem persists."
-msgstr ""
-
-#: pretix_bitpay/payment.py:207
+#: pretix_bitpay/payment.py:142 pretix_bitpay/payment.py:207
 msgid ""
 "We had trouble communicating with BitPay. Please try again and get in touch "
 "with us if this problem persists."
@@ -89,7 +83,7 @@ msgstr ""
 
 #: pretix_bitpay/payment.py:244
 msgid ""
-"We had trouble communicating with Sofort. Please try again and contact "
+"We had trouble communicating with BitPay. Please try again and contact "
 "support if the problem persists."
 msgstr ""
 

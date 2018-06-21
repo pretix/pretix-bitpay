@@ -138,8 +138,8 @@ class BitPay(BasePaymentProvider):
                 "token": self.settings.token
             })
         except (BitPayConnectionError, BitPayBitPayError, BitPayArgumentError) as e:
-            logger.exception('Failure during sofort payment.')
-            raise PaymentException(_('We had trouble communicating with Sofort. Please try again and get in touch '
+            logger.exception('Failure during bitpay payment.')
+            raise PaymentException(_('We had trouble communicating with BitPay. Please try again and get in touch '
                                      'with us if this problem persists.'))
         ReferencedBitPayObject.objects.get_or_create(order=order, reference=inv['id'])
         order.payment_info = json.dumps(inv)
@@ -153,7 +153,7 @@ class BitPay(BasePaymentProvider):
                 retry = False
         except KeyError:
             pass
-        template = get_template('pretix_sofort/pending.html')
+        template = get_template('pretix_bitpay/pending.html')
         ctx = {'request': request, 'event': self.event, 'settings': self.settings,
                'retry': retry, 'order': order}
         return template.render(ctx)
@@ -240,8 +240,8 @@ class BitPay(BasePaymentProvider):
         except PaymentException as e:
             messages.error(request, str(e))
         except requests.exceptions.RequestException as e:
-            logger.exception('Sofort error: %s' % str(e))
-            messages.error(request, _('We had trouble communicating with Sofort. Please try again and contact '
+            logger.exception('BitPay error: %s' % str(e))
+            messages.error(request, _('We had trouble communicating with BitPay. Please try again and contact '
                                       'support if the problem persists.'))
         else:
             mark_order_refunded(order, user=request.user)
