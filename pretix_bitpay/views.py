@@ -54,7 +54,7 @@ def webhook(request, *args, **kwargs):
         rso = ReferencedBitPayObject.objects.select_related('order', 'order__event').get(reference=objid)
         if rso.order.event != request.event:
             return HttpResponse("Unable to detect event", status=200)
-        reso.order.log_action('pretix_bitpay.event', data=event_json)
+        rso.order.log_action('pretix_bitpay.event', data=event_json)
         return process_invoice(rso.order, objid)
     except ReferencedBitPayObject.DoesNotExist:
         return HttpResponse("Unable to detect event", status=200)

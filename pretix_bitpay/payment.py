@@ -4,16 +4,20 @@ import logging
 import urllib
 from collections import OrderedDict
 
+import requests
 from bitpay.client import Client
+from bitpay.exceptions import BitPayConnectionError, BitPayBitPayError, BitPayArgumentError
+from bitpay import key_utils
 from django import forms
+from django.contrib import messages
 from django.core import signing
-from django.shortcuts import redirect
 from django.template.loader import get_template
 from django.urls import reverse
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
 
-from pretix.base.payment import BasePaymentProvider
+from pretix.base.payment import BasePaymentProvider, PaymentException
+from pretix.base.services.orders import mark_order_refunded
 from pretix.multidomain.urlreverse import build_absolute_uri
 from .models import ReferencedBitPayObject
 
@@ -118,20 +122,25 @@ class BitPay(BasePaymentProvider):
     def payment_perform(self, request, order) -> str:
         request.session['payment_bitpay_order_secret'] = order.secret
 
-        inv = self.client.create_invoice({
-            "price": float(order.total),
-            "currency": self.event.currency,
-            "orderId": order.full_code,
-            "transactionSpeed": "medium",
-            "extendedNotifications": "true",
-            "notificationURL": build_absolute_uri(self.event, "plugins:pretix_bitpay:webhook"),
-            "redirectURL": build_absolute_uri(self.event, "plugins:pretix_bitpay:return", kwargs={
-                'order': order.code,
-                'hash': hashlib.sha1(order.secret.lower().encode()).hexdigest(),
-            }),
-            # "buyer": {"email": "test@customer.com"},
-            "token": self.settings.token
-        })
+        try:
+            inv = self.client.create_invoice({
+                "price": float(order.total),
+                "currency": self.event.currency,
+                "orderId": order.full_code,
+                "transactionSpeed": "medium",
+                "extendedNotifications": "true",
+                "notificationURL": build_absolute_uri(self.event, "plugins:pretix_bitpay:webhook"),
+                "redirectURL": build_absolute_uri(self.event, "plugins:pretix_bitpay:return", kwargs={
+                    'order': order.code,
+                    'hash': hashlib.sha1(order.secret.lower().encode()).hexdigest(),
+                }),
+                # "buyer": {"email": "test@customer.com"},
+                "token": self.settings.token
+            })
+        except (BitPayConnectionError, BitPayBitPayError, BitPayArgumentError) as e:
+            logger.exception('Failure during sofort payment.')
+            raise PaymentException(_('We had trouble communicating with Sofort. Please try again and get in touch '
+                                     'with us if this problem persists.'))
         ReferencedBitPayObject.objects.get_or_create(order=order, reference=inv['id'])
         order.payment_info = json.dumps(inv)
         order.save(update_fields=['payment_info'])
@@ -181,24 +190,26 @@ class BitPay(BasePaymentProvider):
             return super().order_control_refund_render(order, request)
 
     def _refund(self, payment_info, order):
-        r = sofort.Refunds(refunds=[
-            sofort.Refund(
-                transaction=payment_info.get('transaction'),
-                amount=order.total,
-                comment=order.full_code,
-                reason_1=order.full_code,
-                reason_2=payment_info.get('transaction')
-            )
-        ])
+        payload = json.dumps({
+            'token': payment_info.get('token'),
+            'amount': payment_info.get('price'),
+            'currency': payment_info.get('currency')
+        })
+        uri = self.client.uri + "/invoices/" + payment_info.get('id') + "/refunds"
+        xidentity = key_utils.get_compressed_public_key_from_pem(self.client.pem)
+        xsignature = key_utils.sign(uri + payload, self.client.pem)
+        headers = {"content-type": "application/json", 'accept': 'application/json', 'X-Identity': xidentity,
+                   'X-Signature': xsignature, 'X-accept-version': '2.0.0'}
         try:
-            sofort.Refunds.from_xml(self._api_call(r.to_xml()))
-        except sofort.SofortError as e:
-            logger.exception('Failure during sofort payment: {}'.format(e.message))
-            raise PaymentException(_('Sofort reported an error: {}').format(e.message))
-        except IOError:
-            logger.exception('Failure during sofort payment.')
-            raise PaymentException(_('We had trouble communicating with Sofort. Please try again and get in touch '
+            response = requests.post(uri, data=payload, headers=headers, verify=self.client.verify)
+        except Exception:
+            logger.exception('Failure during bitpay refund.')
+            raise PaymentException(_('We had trouble communicating with BitPay. Please try again and get in touch '
                                      'with us if this problem persists.'))
+        if not response.ok:
+            e = response.json()['error']
+            logger.exception('Failure during bitpay refund: {}'.format(e))
+            raise PaymentException(_('BitPay reported an error: {}').format(e))
 
     def order_control_refund_perform(self, request, order) -> "bool|str":
         if order.payment_info:
