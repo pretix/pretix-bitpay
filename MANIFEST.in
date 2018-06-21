@@ -1,0 +1,3 @@
+recursive-include pretix_bitpay/static *
+recursive-include pretix_bitpay/templates *
+recursive-include pretix_bitpay/locale *
