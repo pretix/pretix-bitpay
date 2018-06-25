@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Dutch (pretix)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-25 12:22+0200\n"
-"PO-Revision-Date: 2018-06-25 10:41+0000\n"
+"PO-Revision-Date: 2018-06-25 19:00+0000\n"
 "Last-Translator: Maarten van den Berg <maartenberg1@gmail.com>\n"
 "Language-Team: Dutch <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-bitpay/nl/>\n"
@@ -25,7 +25,7 @@ msgstr "Deze plug-in staat u toe om Bitcoin-betalingen te ontvangen via BitPay"
 
 #: pretix_bitpay/payment.py:30
 msgid "Refund automatically?"
-msgstr "Automatisch terugstorten?"
+msgstr "Automatisch terugbetalen?"
 
 #: pretix_bitpay/payment.py:32
 msgid "Automatically refund charge with BitPay"
@@ -96,8 +96,8 @@ msgid ""
 "We were unable to transfer the money back automatically. Please get in touch "
 "with the customer and transfer it back manually."
 msgstr ""
-"We konden het geld niet automatisch terugstorten. Neem contact op met de "
-"klant en maak het geld handmatig over."
+"We konden het geld niet automatisch terugbetalen. Neem contact op met de "
+"klant en maak het handmatig over."
 
 #: pretix_bitpay/payment.py:228
 msgid "Your input was invalid, please try again."
@@ -128,7 +128,7 @@ msgid ""
 "This will remove payment-related history information. No download will be "
 "offered."
 msgstr ""
-"Dit zal betalingsgerelateerde historische informatie verwijderen. Er zal "
+"Dit zal betalings-gerelateerde historische informatie verwijderen. Er zal "
 "geen download worden aangeboden."
 
 #: pretix_bitpay/templates/pretix_bitpay/action_overpaid.html:5
@@ -161,7 +161,7 @@ msgstr "Nee"
 
 #: pretix_bitpay/templates/pretix_bitpay/action_refund.html:17
 msgid "Yes, mark order as refunded"
-msgstr "Ja, markeer bestelling als terugbetaald"
+msgstr "Ja, merk bestelling aan als terugbetaald"
 
 #: pretix_bitpay/templates/pretix_bitpay/action_refund.html:19
 msgid "This action cannot be undone."
@@ -230,13 +230,11 @@ msgstr ""
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:17
 msgid "The payment process has started in a new window."
-msgstr "Het betalingsproces is in een nieuw venster gestart."
+msgstr "Het betalingsproces is begonnen in een nieuw venster."
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:20
 msgid "The window to enter your payment data was not opened or was closed?"
-msgstr ""
-"Is het venster om uw betalingsgegevens uit te voeren niet geopend of "
-"gesloten?"
+msgstr "Is het venster om uw betaling uit te voeren niet geopend?"
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:24
 msgid "Click here in order to open the window."
@@ -249,15 +247,15 @@ msgstr "De verbinding met uw BitPay-account is verbroken."
 #: pretix_bitpay/views.py:129
 msgid "The order cannot be marked as refunded as it is not marked as paid!"
 msgstr ""
-"De bestelling kan niet worden gemarkeerd als terugbetaald, omdat de "
-"bestelling niet is gemarkeerd als betaald!"
+"De bestelling kan niet als terugbetaald worden aangemerkt, omdat hij niet is "
+"aangemerkt als betaald!"
 
 #: pretix_bitpay/views.py:133
 msgid ""
 "The order has been marked as refunded and the issue has been marked as "
 "resolved!"
 msgstr ""
-"De bestelling is gemarkeerd als terugbetaald, en het dispuut is gemarkeerd "
+"De bestelling is aangemerkt als terugbetaald, en het dispuut is aangemerkt "
 "als opgelost!"
 
 #: pretix_bitpay/views.py:176
@@ -265,8 +263,8 @@ msgid ""
 "Sorry, there was an error in the payment process. Please check the link in "
 "your emails to continue."
 msgstr ""
-"Sorry, er is een fout opgetreden in het betalingsproces. Klik op de link in "
-"de e-mail die u heeft ontvangen om door te gaan."
+"Sorry, er trad een fout op in het betalingsproces. Klik op de link in uw "
+"email om door te gaan."
 
 #: pretix_bitpay/views.py:189
 msgid "You are already connected to BitPay."
