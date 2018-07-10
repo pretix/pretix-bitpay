@@ -8,39 +8,44 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-21 11:07+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-07-11 01:00+0000\n"
+"Last-Translator: Claude <superoxyde@laposte.net>\n"
+"Language-Team: French <https://translate.pretix.eu/projects/pretix/"
+"pretix-plugin-bitpay/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 3.0.1\n"
 
 #: pretix_bitpay/__init__.py:8 pretix_bitpay/__init__.py:11
 #: pretix_bitpay/payment.py:41
 msgid "BitPay"
-msgstr ""
+msgstr "BitPay"
 
 #: pretix_bitpay/__init__.py:14
 msgid "This plugin allows you to receive Bitcoin payments via BitPay"
-msgstr ""
+msgstr "Ce plugin vous permet de recevoir les paiements en Bitcoin via BitPay"
 
 #: pretix_bitpay/payment.py:30
 msgid "Refund automatically?"
-msgstr ""
+msgstr "Remboursement automatique ?"
 
 #: pretix_bitpay/payment.py:32
 msgid "Automatically refund charge with BitPay"
-msgstr ""
+msgstr "Remboursement automatique des frais avec BitPay"
 
 #: pretix_bitpay/payment.py:33
 msgid ""
 "Do not send refund instruction to BitPay, only mark as refunded in pretix"
 msgstr ""
+"Ne pas envoyez d'instruction de remboursement à BitPay, seulement la marque "
+"remboursée dans pretix"
 
 #: pretix_bitpay/payment.py:42
 msgid "Bitcoin"
-msgstr ""
+msgstr "Bitcoin"
 
 #: pretix_bitpay/payment.py:51
 msgid ""
@@ -49,34 +54,42 @@ msgid ""
 "account. A BitPay site will open in a new tab. Return to this page and "
 "refresh it after you authorized the token at BitPay."
 msgstr ""
+"Pour accepter les paiements via BitPay, vous aurez besoin d'un compte chez "
+"BitPay. En cliquant sur le bouton suivant, vous pouvez connecter pretix à "
+"votre compte BitPay. Un site BitPay s'ouvrira dans un nouvel onglet. Revenez "
+"à cette page et rafraîchissez-la après avoir autorisé le token chez BitPay."
 
 #: pretix_bitpay/payment.py:58
 msgid "Connect with BitPay"
-msgstr ""
+msgstr "Connecter avec BitPay"
 
 #: pretix_bitpay/payment.py:63
 msgid "Connect with test.bitpay.com"
-msgstr ""
+msgstr "Connectez-vous avec test.bitpay.com"
 
 #: pretix_bitpay/payment.py:73
 msgid "Disconnect from BitPay"
-msgstr ""
+msgstr "Déconnecter de BitPay"
 
 #: pretix_bitpay/payment.py:84
 msgid "API URL"
-msgstr ""
+msgstr "URL API"
 
 #: pretix_bitpay/payment.py:142
 msgid ""
 "We had trouble communicating with Sofort. Please try again and get in touch "
 "with us if this problem persists."
 msgstr ""
+"Nous avons eu du mal à communiquer avec Sofort. Veuillez réessayer et "
+"prendre contact avec nous si le problème persiste."
 
 #: pretix_bitpay/payment.py:207
 msgid ""
 "We had trouble communicating with BitPay. Please try again and get in touch "
 "with us if this problem persists."
 msgstr ""
+"Nous avons eu du mal à communiquer avec BitPay. Veuillez réessayer et "
+"prendre contact avec nous si le problème persiste."
 
 #: pretix_bitpay/payment.py:212
 msgid "BitPay reported an error: {}"
