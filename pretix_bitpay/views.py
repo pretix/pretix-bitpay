@@ -194,10 +194,13 @@ def auth_start(request, **kwargs):
         }))
     request.session['payment_bitpay_auth_event'] = request.event.pk
     sin = key_utils.get_sin_from_pem(request.event.settings.payment_bitpay_pem)
-    url = 'https://test.bitpay.com' if 'test' in request.GET else 'https://bitpay.com'
+    if request.GET.get('url'):
+        url = request.GET.get('url')
+    else:
+        url = 'https://test.bitpay.com' if 'test' in request.GET else 'https://bitpay.com'
     r = requests.post(
         url + '/tokens',
-        data={
+        json={
             'label': settings.PRETIX_INSTANCE_NAME,
             'facade': 'merchant',
             'id': sin

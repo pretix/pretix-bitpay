@@ -45,8 +45,17 @@ class BitPay(BasePaymentProvider):
         if not self.settings.token:
             return (
                 "<p>{}</p>"
+                "<p>"
                 "<a href='{}' target='_blank' class='btn btn-primary btn-lg'>{}</a> "
-                "<a href='{}' target='_blank' class='btn btn-default btn-lg'>{}</a>"
+                "<a href='{}' target='_blank' class='btn btn-default btn-lg'>{}</a> "
+                "</p>"
+                "<p>{}</p>"
+                "</form>" # This is a hell of a hack, sorry…
+                "<form class='form-inline' action='{}' method='GET' target='_blank'>"
+                "<input type='text' name='url' class='form-control' value='https://btcpay.lightbo.lt'> "
+                "<button class='btn btn-default'>{}</button>"
+                "</form>"
+                "<form>"
             ).format(
                 _('To accept payments via BitPay, you will need an account at BitPay. By clicking on the '
                   'following button, you can connect pretix to your BitPay account. A BitPay site will open in a new '
@@ -61,6 +70,13 @@ class BitPay(BasePaymentProvider):
                     'event': self.event.slug,
                 }) + '?test=1',
                 _('Connect with test.bitpay.com'),
+                _('Alternatively, you can connect with a third-party provider using a BitPay-compatible API. Enter'
+                  'the URL here you want to connect to.'),
+                reverse('plugins:pretix_bitpay:auth.start', kwargs={
+                    'organizer': self.event.organizer.slug,
+                    'event': self.event.slug,
+                }),
+                _('Start pairing')
             )
         else:
             return (
@@ -193,7 +209,8 @@ class BitPay(BasePaymentProvider):
         payload = json.dumps({
             'token': payment_info.get('token'),
             'amount': payment_info.get('price'),
-            'currency': payment_info.get('currency')
+            'currency': payment_info.get('currency'),
+            'refundEmail': order.email
         })
         uri = self.client.uri + "/invoices/" + payment_info.get('id') + "/refunds"
         xidentity = key_utils.get_compressed_public_key_from_pem(self.client.pem)
