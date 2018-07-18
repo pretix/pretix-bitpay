@@ -8,39 +8,44 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-21 11:27+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-07-18 11:31+0000\n"
+"Last-Translator: Yunus Fırat Pişkin <firat.piskin@idvlabs.com>\n"
+"Language-Team: Turkish <https://translate.pretix.eu/projects/pretix/"
+"pretix-plugin-bitpay/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.0.1\n"
 
 #: pretix_bitpay/__init__.py:8 pretix_bitpay/__init__.py:11
 #: pretix_bitpay/payment.py:41
 msgid "BitPay"
-msgstr ""
+msgstr "Bitpay"
 
 #: pretix_bitpay/__init__.py:14
 msgid "This plugin allows you to receive Bitcoin payments via BitPay"
-msgstr ""
+msgstr "Bu eklenti BitPay üzerinden Bitcoin ödemeleri almanızı sağlar."
 
 #: pretix_bitpay/payment.py:30
 msgid "Refund automatically?"
-msgstr ""
+msgstr "Otomatik geri ödeme?"
 
 #: pretix_bitpay/payment.py:32
 msgid "Automatically refund charge with BitPay"
-msgstr ""
+msgstr "BitPay ile otomatik olarak ücret iadesi"
 
 #: pretix_bitpay/payment.py:33
 msgid ""
 "Do not send refund instruction to BitPay, only mark as refunded in pretix"
 msgstr ""
+"Geri ödeme talimatını BitPay'e göndermeyin, sadece ön not olarak iade "
+"edildiğinde işaretle"
 
 #: pretix_bitpay/payment.py:42
 msgid "Bitcoin"
-msgstr ""
+msgstr "Bitcoin"
 
 #: pretix_bitpay/payment.py:51
 msgid ""
@@ -49,66 +54,78 @@ msgid ""
 "account. A BitPay site will open in a new tab. Return to this page and "
 "refresh it after you authorized the token at BitPay."
 msgstr ""
+"BitPay ile ödemeleri kabul etmek için, BitPay'de bir hesaba ihtiyacınız "
+"olacak. Aşağıdaki düğmeye tıklayarak, BitPay hesabınıza pretix'i "
+"bağlayabilirsiniz. Bir BitPay sitesi yeni bir sekmede açılır. Bu sayfaya "
+"geri dönün ve BitPay'de belirteci yetkilendirdikten sonra yenileyin."
 
 #: pretix_bitpay/payment.py:58
 msgid "Connect with BitPay"
-msgstr ""
+msgstr "BitPay ile iletişime geç"
 
 #: pretix_bitpay/payment.py:63
 msgid "Connect with test.bitpay.com"
-msgstr ""
+msgstr "Test.bitpay.com ile bağlanın"
 
 #: pretix_bitpay/payment.py:73
 msgid "Disconnect from BitPay"
-msgstr ""
+msgstr "BitPay ile bağlantıyı kes"
 
 #: pretix_bitpay/payment.py:84
 msgid "API URL"
-msgstr ""
+msgstr "API URL"
 
 #: pretix_bitpay/payment.py:142 pretix_bitpay/payment.py:207
 msgid ""
 "We had trouble communicating with BitPay. Please try again and get in touch "
 "with us if this problem persists."
 msgstr ""
+"BitPay ile iletişimde sorun vardı. Lütfen tekrar deneyin ve bu sorun devam "
+"ederse bizimle iletişime geçin."
 
 #: pretix_bitpay/payment.py:212
 msgid "BitPay reported an error: {}"
-msgstr ""
+msgstr "BitPay bir hata bildirdi: {}"
 
 #: pretix_bitpay/payment.py:222
 msgid ""
 "We were unable to transfer the money back automatically. Please get in touch "
 "with the customer and transfer it back manually."
 msgstr ""
+"Parayı otomatik olarak geri transfer edemedik. Lütfen müşteri ile temasa "
+"geçin ve manuel olarak geri gönderin."
 
 #: pretix_bitpay/payment.py:228
 msgid "Your input was invalid, please try again."
-msgstr ""
+msgstr "Girişiniz geçersiz, lütfen tekrar deneyin."
 
 #: pretix_bitpay/payment.py:244
 msgid ""
 "We had trouble communicating with BitPay. Please try again and contact "
 "support if the problem persists."
 msgstr ""
+"BitPay ile iletişimde sorun vardı. Lütfen tekrar deneyin ve sorun devam "
+"ederse desteğe başvurun."
 
 #: pretix_bitpay/signals.py:29
 msgid "BitPay reported an event: {}"
-msgstr ""
+msgstr "BitPay bir etkinlik bildirdi: {}"
 
 #: pretix_bitpay/signals.py:52
 msgid "BitPay client: Private Key"
-msgstr ""
+msgstr "BitPay istemcisi: Özel Anahtar"
 
 #: pretix_bitpay/signals.py:60
 msgid "BitPay payment history"
-msgstr ""
+msgstr "BitPay ödeme geçmişi"
 
 #: pretix_bitpay/signals.py:62
 msgid ""
 "This will remove payment-related history information. No download will be "
 "offered."
 msgstr ""
+"Bu ödeme ile ilgili geçmiş bilgilerini kaldıracaktır. Hiçbir indirme "
+"yapılmayacaktır."
 
 #: pretix_bitpay/templates/pretix_bitpay/action_overpaid.html:5
 #, python-format
@@ -118,6 +135,10 @@ msgid ""
 "Therefore, the payment could not be accepted. Please contact the user and "
 "refund the money via BitPay's interface."
 msgstr ""
+"BitPay faturası <a %(bp_href)s>% (ücret)s</a> başarılı oldu, ancak siparişin "
+"%(sipariş)s süresi doldu ve bu süre içinde ürün satıldı. Bu nedenle ödeme "
+"kabul edilemedi. Lütfen kullanıcıyla iletişime geçin ve BitPay'in arayüzü "
+"ile para iadesi yapın."
 
 #: pretix_bitpay/templates/pretix_bitpay/action_refund.html:5
 #, python-format
@@ -126,18 +147,21 @@ msgid ""
 "failed or refunded. Do you want to mark the matching order (%(order)s) as "
 "refunded?"
 msgstr ""
+"BitPay, <a%(bp_href)s>%(charge) s</a> faturasının başarısız olduğunu veya "
+"iade edildiğini bildirdi. Eşleşen siparişi (%(sipariş)s) iade edildi olarak "
+"işaretlemek ister misiniz?"
 
 #: pretix_bitpay/templates/pretix_bitpay/action_refund.html:14
 msgid "No"
-msgstr ""
+msgstr "Hayır"
 
 #: pretix_bitpay/templates/pretix_bitpay/action_refund.html:17
 msgid "Yes, mark order as refunded"
-msgstr ""
+msgstr "Evet, iade edilen siparişi işaretle"
 
 #: pretix_bitpay/templates/pretix_bitpay/action_refund.html:19
 msgid "This action cannot be undone."
-msgstr ""
+msgstr "Bu işlem geri alınamaz."
 
 #: pretix_bitpay/templates/pretix_bitpay/checkout_payment_confirm.html:3
 #: pretix_bitpay/templates/pretix_bitpay/checkout_payment_form.html:2
@@ -145,16 +169,19 @@ msgid ""
 "After you submitted your order, we will redirect you to BitPay to complete "
 "your payment. You will then be redirected back here to get your tickets."
 msgstr ""
+"Siparişinizi gönderdikten sonra, ödemenizi tamamlamak için sizi BitPay'e "
+"yönlendireceğiz. Biletlerinizi almak için buraya geri yönlendirileceksiniz."
 
 #: pretix_bitpay/templates/pretix_bitpay/control.html:5
 msgid "This order has been paid with BitPay."
-msgstr ""
+msgstr "Bu sipariş BitPay ile ödendi."
 
 #: pretix_bitpay/templates/pretix_bitpay/control.html:9
 msgid ""
 "This order has been planned to be paid with BitPay and has been marked as "
 "refunded."
 msgstr ""
+"Bu siparişin BitPay ile ödenmesi planlandı ve iade edildi olarak işaretlendi."
 
 #: pretix_bitpay/templates/pretix_bitpay/control.html:13
 #: pretix_bitpay/templates/pretix_bitpay/control.html:32
@@ -162,18 +189,19 @@ msgid ""
 "This order has been planned to be paid with BitPay, but the payment has not "
 "yet been completed."
 msgstr ""
+"Bu siparişin BitPay ile ödenmesi planlandı, ancak ödeme henüz tamamlanmadı."
 
 #: pretix_bitpay/templates/pretix_bitpay/control.html:19
 msgid "Invoice ID"
-msgstr ""
+msgstr "Fatura Kimliği"
 
 #: pretix_bitpay/templates/pretix_bitpay/control.html:21
 msgid "Status"
-msgstr ""
+msgstr "Durum"
 
 #: pretix_bitpay/templates/pretix_bitpay/control.html:27
 msgid "Error message"
-msgstr ""
+msgstr "Hata Mesajı"
 
 #: pretix_bitpay/templates/pretix_bitpay/control_refund.html:5
 msgid ""
@@ -181,49 +209,58 @@ msgid ""
 "email with instructions on how to retrieve the refund. pretix, however, will "
 "mark the ticket as refunded immediately."
 msgstr ""
+"BitPay'in bir \"geri ödeme talebi\" oluşturacağını ve kullanıcının geri "
+"ödemeyi nasıl alacağına ilişkin talimatları içeren bir e-posta alacağını "
+"unutmayın. Ancak, pretix, bileti hemen iade edildi olarak işaretler."
 
 #: pretix_bitpay/templates/pretix_bitpay/pending.html:3
 msgid ""
 "We're waiting for an answer from the payment provider regarding your "
 "payment. Please contact us if this takes more than a few hours."
 msgstr ""
+"Ödemenizle ilgili olarak ödeme sağlayıcısından cevap bekliyoruz. Bu birkaç "
+"saatten fazla sürerse lütfen bizimle iletişime geçin."
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:17
 msgid "The payment process has started in a new window."
-msgstr ""
+msgstr "Ödeme işlemi yeni bir pencerede başladı."
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:20
 msgid "The window to enter your payment data was not opened or was closed?"
-msgstr ""
+msgstr "Ödeme verilerinizi girmek için pencere açılmamış veya kapatılmamış mı?"
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:24
 msgid "Click here in order to open the window."
-msgstr ""
+msgstr "Pencereyi açmak için buraya tıklayın."
 
 #: pretix_bitpay/views.py:108
 msgid "Your BitPay account has been disconnected."
-msgstr ""
+msgstr "BitPay hesabınızın bağlantısı kesildi."
 
 #: pretix_bitpay/views.py:129
 msgid "The order cannot be marked as refunded as it is not marked as paid!"
 msgstr ""
+"Sipariş, ödeme olarak işaretlenmediği için iade edildi olarak işaretlenemez!"
 
 #: pretix_bitpay/views.py:133
 msgid ""
 "The order has been marked as refunded and the issue has been marked as "
 "resolved!"
 msgstr ""
+"Sipariş iade edildi olarak işaretlendi ve sorun çözüldü olarak işaretlendi!"
 
 #: pretix_bitpay/views.py:176
 msgid ""
 "Sorry, there was an error in the payment process. Please check the link in "
 "your emails to continue."
 msgstr ""
+"Üzgünüz, ödeme sürecinde bir hata oluştu. Devam etmek için lütfen e-"
+"postalarınızdaki bağlantıyı kontrol edin."
 
 #: pretix_bitpay/views.py:189
 msgid "You are already connected to BitPay."
-msgstr ""
+msgstr "BitPay'e zaten bağlısınız."
 
 #: pretix_bitpay/views.py:214
 msgid "Communication with BitPay was not successful."
-msgstr ""
+msgstr "BitPay ile iletişim başarılı değildi."
