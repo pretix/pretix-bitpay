@@ -198,23 +198,27 @@ def auth_start(request, **kwargs):
         url = request.GET.get('url')
     else:
         url = 'https://test.bitpay.com' if 'test' in request.GET else 'https://bitpay.com'
-    r = requests.post(
-        url + '/tokens',
-        json={
-            'label': settings.PRETIX_INSTANCE_NAME,
-            'facade': 'merchant',
-            'id': sin
-        }
-    )
-    if r.status_code == 200:
-        data = r.json()['data'][0]
-        request.event.settings.payment_bitpay_token = data['token']
-        request.event.settings.payment_bitpay_url = url
-        return redirect(
-            url + '/api-access-request?pairingCode=' + data['pairingCode']
+    try:
+        r = requests.post(
+            url + '/tokens',
+            json={
+                'label': settings.PRETIX_INSTANCE_NAME,
+                'facade': 'merchant',
+                'id': sin
+            }
         )
+    except requests.ConnectionError:
+        messages.error(request, _('Communication with BitPay was not successful.'))
+    else:
+        if r.status_code == 200:
+            data = r.json()['data'][0]
+            request.event.settings.payment_bitpay_token = data['token']
+            request.event.settings.payment_bitpay_url = url
+            return redirect(
+                url + '/api-access-request?pairingCode=' + data['pairingCode']
+            )
+        messages.error(request, _('Communication with BitPay was not successful.'))
 
-    messages.error(request, _('Communication with BitPay was not successful.'))
     return redirect(reverse('control:event.settings.payment.provider', kwargs={
         'organizer': request.event.organizer.slug,
         'event': request.event.slug,
