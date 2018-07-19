@@ -22,6 +22,7 @@ from bitpay import key_utils
 from pretix.base.models import Order, Quota, RequiredAction
 from pretix.base.services.locking import LockTimeoutException
 from pretix.base.services.orders import mark_order_paid, mark_order_refunded
+from pretix.base.settings import GlobalSettingsObject
 from pretix.control.permissions import event_permission_required
 from pretix.multidomain.urlreverse import eventreverse
 from .models import ReferencedBitPayObject
@@ -193,7 +194,12 @@ def auth_start(request, **kwargs):
             'provider': 'bitpay'
         }))
     request.session['payment_bitpay_auth_event'] = request.event.pk
-    sin = key_utils.get_sin_from_pem(request.event.settings.payment_bitpay_pem)
+    pem = request.event.settings.payment_bitpay_pem
+    if not pem:
+        gs = GlobalSettingsObject()
+        pem = gs.settings.payment_bitpay_pem = key_utils.generate_pem()
+
+    sin = key_utils.get_sin_from_pem(pem)
     if request.GET.get('url'):
         url = request.GET.get('url')
     else:
