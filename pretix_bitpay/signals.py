@@ -6,11 +6,9 @@ from django.dispatch import receiver
 from django.template.loader import get_template
 from django.utils.translation import ugettext_lazy as _
 
-from pretix.base.shredder import BaseDataShredder
 from pretix.base.signals import (
     logentry_display, register_global_settings,
-    register_payment_providers, requiredaction_display,
-    register_data_shredders)
+    register_payment_providers, requiredaction_display, )
 
 
 @receiver(register_payment_providers, dispatch_uid="payment_bitpay")
@@ -54,31 +52,3 @@ def register_global_settings(sender, **kwargs):
             widget=forms.Textarea
         )),
     ])
-
-
-class PaymentLogsShredder(BaseDataShredder):
-    verbose_name = _('BitPay payment history')
-    identifier = 'bitpay_logs'
-    description = _('This will remove payment-related history information. No download will be offered.')
-
-    def generate_files(self):
-        pass
-
-    def shred_data(self):
-        for le in self.event.logentry_set.filter(action_type="pretix_bitpay.event").exclude(data=""):
-            d = le.parsed_data
-            if 'data' in d:
-                for k, v in list(d['data'].items()):
-                    if v not in ('id', 'status', 'price', 'currency', 'invoiceTime', 'paymentSubtotals',
-                                 'paymentTotals', 'transactionCurrency', 'amountPaid'):
-                        d['data'][k] = '█'
-                le.data = json.dumps(d)
-                le.shredded = True
-                le.save(update_fields=['data', 'shredded'])
-
-
-@receiver(register_data_shredders, dispatch_uid="bitpay_shredders")
-def register_shredder(sender, **kwargs):
-    return [
-        PaymentLogsShredder,
-    ]
