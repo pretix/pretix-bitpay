@@ -210,7 +210,7 @@ class BitPay(BasePaymentProvider):
         for k, v in list(d.items()):
             if v not in ('id', 'status', 'price', 'currency', 'invoiceTime', 'paymentSubtotals',
                          'paymentTotals', 'transactionCurrency', 'amountPaid'):
-                d['data'][k] = '█'
+                d[k] = '█'
         obj.info_data = d
         obj.save()
 
