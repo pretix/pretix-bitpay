@@ -1,12 +1,12 @@
 from django.conf.urls import url, include
 
 from pretix.multidomain import event_url
-from .views import auth_start, auth_disconnect, webhook, ReturnView, redirect, refund
+from .views import auth_start, auth_disconnect, webhook, ReturnView, redirect_view, refund
 
 event_patterns = [
     url(r'^bitpay/', include([
         event_url(r'^webhook/$', webhook, name='webhook', require_live=False),
-        event_url(r'^redirect/$', redirect, name='redirect', require_live=False),
+        event_url(r'^redirect/$', redirect_view, name='redirect', require_live=False),
         url(r'^return/(?P<order>[^/]+)/(?P<hash>[^/]+)/$', ReturnView.as_view(), name='return'),
     ])),
 ]
