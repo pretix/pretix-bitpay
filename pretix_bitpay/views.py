@@ -50,7 +50,10 @@ def redirect_view(request, *args, **kwargs):
 @require_POST
 def webhook(request, *args, **kwargs):
     event_json = json.loads(request.body.decode('utf-8'))
-    objid = event_json['data']['id']
+    if 'data' not in event_json and 'id' in event_json:
+        objid = event_json['id']
+    else:
+        objid = event_json['data']['id']
     try:
         rso = ReferencedBitPayObject.objects.select_related('order', 'order__event').get(reference=objid)
         if rso.order.event != request.event:
