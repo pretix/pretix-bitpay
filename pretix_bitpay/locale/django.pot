@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-21 11:27+0200\n"
+"POT-Creation-Date: 2018-08-06 12:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: pretix_bitpay/__init__.py:8 pretix_bitpay/__init__.py:11
-#: pretix_bitpay/payment.py:41
+#: pretix_bitpay/payment.py:30
 msgid "BitPay"
 msgstr ""
 
@@ -26,24 +26,11 @@ msgstr ""
 msgid "This plugin allows you to receive Bitcoin payments via BitPay"
 msgstr ""
 
-#: pretix_bitpay/payment.py:30
-msgid "Refund automatically?"
-msgstr ""
-
-#: pretix_bitpay/payment.py:32
-msgid "Automatically refund charge with BitPay"
-msgstr ""
-
-#: pretix_bitpay/payment.py:33
-msgid ""
-"Do not send refund instruction to BitPay, only mark as refunded in pretix"
-msgstr ""
-
-#: pretix_bitpay/payment.py:42
+#: pretix_bitpay/payment.py:31
 msgid "Bitcoin"
 msgstr ""
 
-#: pretix_bitpay/payment.py:51
+#: pretix_bitpay/payment.py:49
 msgid ""
 "To accept payments via BitPay, you will need an account at BitPay. By "
 "clicking on the following button, you can connect pretix to your BitPay "
@@ -51,64 +38,54 @@ msgid ""
 "refresh it after you authorized the token at BitPay."
 msgstr ""
 
-#: pretix_bitpay/payment.py:58
+#: pretix_bitpay/payment.py:56
 msgid "Connect with BitPay"
 msgstr ""
 
-#: pretix_bitpay/payment.py:63
+#: pretix_bitpay/payment.py:61
 msgid "Connect with test.bitpay.com"
 msgstr ""
 
-#: pretix_bitpay/payment.py:73
+#: pretix_bitpay/payment.py:62
+msgid ""
+"Alternatively, you can connect with a third-party provider using a BitPay-"
+"compatible API. Enterthe URL here you want to connect to."
+msgstr ""
+
+#: pretix_bitpay/payment.py:68
+msgid "Start pairing"
+msgstr ""
+
+#: pretix_bitpay/payment.py:78
 msgid "Disconnect from BitPay"
 msgstr ""
 
-#: pretix_bitpay/payment.py:84
+#: pretix_bitpay/payment.py:89
 msgid "API URL"
 msgstr ""
 
-#: pretix_bitpay/payment.py:142 pretix_bitpay/payment.py:207
+#: pretix_bitpay/payment.py:148 pretix_bitpay/payment.py:191
 msgid ""
 "We had trouble communicating with BitPay. Please try again and get in touch "
 "with us if this problem persists."
 msgstr ""
 
-#: pretix_bitpay/payment.py:212
+#: pretix_bitpay/payment.py:196
 msgid "BitPay reported an error: {}"
 msgstr ""
 
-#: pretix_bitpay/payment.py:222
-msgid ""
-"We were unable to transfer the money back automatically. Please get in touch "
-"with the customer and transfer it back manually."
-msgstr ""
-
-#: pretix_bitpay/payment.py:228
-msgid "Your input was invalid, please try again."
-msgstr ""
-
-#: pretix_bitpay/payment.py:244
+#: pretix_bitpay/payment.py:203
 msgid ""
 "We had trouble communicating with BitPay. Please try again and contact "
 "support if the problem persists."
 msgstr ""
 
-#: pretix_bitpay/signals.py:29
+#: pretix_bitpay/signals.py:27
 msgid "BitPay reported an event: {}"
 msgstr ""
 
-#: pretix_bitpay/signals.py:52
+#: pretix_bitpay/signals.py:50
 msgid "BitPay client: Private Key"
-msgstr ""
-
-#: pretix_bitpay/signals.py:60
-msgid "BitPay payment history"
-msgstr ""
-
-#: pretix_bitpay/signals.py:62
-msgid ""
-"This will remove payment-related history information. No download will be "
-"offered."
 msgstr ""
 
 #: pretix_bitpay/templates/pretix_bitpay/action_overpaid.html:5
@@ -128,51 +105,23 @@ msgid ""
 "refunded?"
 msgstr ""
 
-#: pretix_bitpay/templates/pretix_bitpay/action_refund.html:14
-msgid "No"
-msgstr ""
-
-#: pretix_bitpay/templates/pretix_bitpay/action_refund.html:17
-msgid "Yes, mark order as refunded"
-msgstr ""
-
-#: pretix_bitpay/templates/pretix_bitpay/action_refund.html:19
-msgid "This action cannot be undone."
-msgstr ""
-
 #: pretix_bitpay/templates/pretix_bitpay/checkout_payment_confirm.html:3
 #: pretix_bitpay/templates/pretix_bitpay/checkout_payment_form.html:2
 msgid ""
-"After you submitted your order, we will redirect you to BitPay to complete "
-"your payment. You will then be redirected back here to get your tickets."
+"After you submitted your order, we will redirect you to a payment partner to "
+"complete your payment. You will then be redirected back here to get your "
+"tickets."
 msgstr ""
 
-#: pretix_bitpay/templates/pretix_bitpay/control.html:5
-msgid "This order has been paid with BitPay."
-msgstr ""
-
-#: pretix_bitpay/templates/pretix_bitpay/control.html:9
-msgid ""
-"This order has been planned to be paid with BitPay and has been marked as "
-"refunded."
-msgstr ""
-
-#: pretix_bitpay/templates/pretix_bitpay/control.html:13
-#: pretix_bitpay/templates/pretix_bitpay/control.html:32
-msgid ""
-"This order has been planned to be paid with BitPay, but the payment has not "
-"yet been completed."
-msgstr ""
-
-#: pretix_bitpay/templates/pretix_bitpay/control.html:19
+#: pretix_bitpay/templates/pretix_bitpay/control.html:6
 msgid "Invoice ID"
 msgstr ""
 
-#: pretix_bitpay/templates/pretix_bitpay/control.html:21
+#: pretix_bitpay/templates/pretix_bitpay/control.html:8
 msgid "Status"
 msgstr ""
 
-#: pretix_bitpay/templates/pretix_bitpay/control.html:27
+#: pretix_bitpay/templates/pretix_bitpay/control.html:14
 msgid "Error message"
 msgstr ""
 
@@ -201,30 +150,20 @@ msgstr ""
 msgid "Click here in order to open the window."
 msgstr ""
 
-#: pretix_bitpay/views.py:108
+#: pretix_bitpay/views.py:117
 msgid "Your BitPay account has been disconnected."
 msgstr ""
 
-#: pretix_bitpay/views.py:129
-msgid "The order cannot be marked as refunded as it is not marked as paid!"
-msgstr ""
-
-#: pretix_bitpay/views.py:133
-msgid ""
-"The order has been marked as refunded and the issue has been marked as "
-"resolved!"
-msgstr ""
-
-#: pretix_bitpay/views.py:176
+#: pretix_bitpay/views.py:167
 msgid ""
 "Sorry, there was an error in the payment process. Please check the link in "
 "your emails to continue."
 msgstr ""
 
-#: pretix_bitpay/views.py:189
+#: pretix_bitpay/views.py:180
 msgid "You are already connected to BitPay."
 msgstr ""
 
-#: pretix_bitpay/views.py:214
+#: pretix_bitpay/views.py:207 pretix_bitpay/views.py:216
 msgid "Communication with BitPay was not successful."
 msgstr ""

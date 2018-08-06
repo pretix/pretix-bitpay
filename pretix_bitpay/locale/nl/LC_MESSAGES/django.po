@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dutch (pretix)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-25 12:22+0200\n"
+"POT-Creation-Date: 2018-08-06 12:38+0200\n"
 "PO-Revision-Date: 2018-06-25 19:00+0000\n"
 "Last-Translator: Maarten van den Berg <maartenberg1@gmail.com>\n"
-"Language-Team: Dutch <https://translate.pretix.eu/projects/pretix/"
-"pretix-plugin-bitpay/nl/>\n"
+"Language-Team: Dutch <https://translate.pretix.eu/projects/pretix/pretix-"
+"plugin-bitpay/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 
 #: pretix_bitpay/__init__.py:8 pretix_bitpay/__init__.py:11
-#: pretix_bitpay/payment.py:41
+#: pretix_bitpay/payment.py:30
 msgid "BitPay"
 msgstr "BitPay"
 
@@ -23,26 +23,11 @@ msgstr "BitPay"
 msgid "This plugin allows you to receive Bitcoin payments via BitPay"
 msgstr "Deze plug-in staat u toe om Bitcoin-betalingen te ontvangen via BitPay"
 
-#: pretix_bitpay/payment.py:30
-msgid "Refund automatically?"
-msgstr "Automatisch terugbetalen?"
-
-#: pretix_bitpay/payment.py:32
-msgid "Automatically refund charge with BitPay"
-msgstr "Betaal kosten automatisch terug met BitPay"
-
-#: pretix_bitpay/payment.py:33
-msgid ""
-"Do not send refund instruction to BitPay, only mark as refunded in pretix"
-msgstr ""
-"Stuur geen terugbetaalinstructie naar BitPay, merk alleen als betaald aan in "
-"pretix"
-
-#: pretix_bitpay/payment.py:42
+#: pretix_bitpay/payment.py:31
 msgid "Bitcoin"
 msgstr "Bitcoin"
 
-#: pretix_bitpay/payment.py:51
+#: pretix_bitpay/payment.py:49
 msgid ""
 "To accept payments via BitPay, you will need an account at BitPay. By "
 "clicking on the following button, you can connect pretix to your BitPay "
@@ -55,31 +40,33 @@ msgstr ""
 "deze pagina en ververs de pagina nadat u het token heeft goedgekeurd bij "
 "BitPay."
 
-#: pretix_bitpay/payment.py:58
+#: pretix_bitpay/payment.py:56
 msgid "Connect with BitPay"
 msgstr "Verbinden met BitPay"
 
-#: pretix_bitpay/payment.py:63
+#: pretix_bitpay/payment.py:61
 msgid "Connect with test.bitpay.com"
 msgstr "Verbinden met test.bitpay.com"
 
-#: pretix_bitpay/payment.py:73
+#: pretix_bitpay/payment.py:62
+msgid ""
+"Alternatively, you can connect with a third-party provider using a BitPay-"
+"compatible API. Enterthe URL here you want to connect to."
+msgstr ""
+
+#: pretix_bitpay/payment.py:68
+msgid "Start pairing"
+msgstr ""
+
+#: pretix_bitpay/payment.py:78
 msgid "Disconnect from BitPay"
 msgstr "Verbinding met BitPay verbreken"
 
-#: pretix_bitpay/payment.py:84
+#: pretix_bitpay/payment.py:89
 msgid "API URL"
 msgstr "API-URL"
 
-#: pretix_bitpay/payment.py:142
-msgid ""
-"We had trouble communicating with Sofort. Please try again and get in touch "
-"with us if this problem persists."
-msgstr ""
-"We hadden moeite met het communiceren met Sofort. Probeer het opnieuw, en "
-"neem contact met ons op als dit probleem aanhoudt."
-
-#: pretix_bitpay/payment.py:207
+#: pretix_bitpay/payment.py:148 pretix_bitpay/payment.py:191
 msgid ""
 "We had trouble communicating with BitPay. Please try again and get in touch "
 "with us if this problem persists."
@@ -87,49 +74,29 @@ msgstr ""
 "We hadden moeite met het communiceren met BitPay. Probeer het opnieuw, en "
 "neem contact met ons op als dit probleem aanhoudt."
 
-#: pretix_bitpay/payment.py:212
+#: pretix_bitpay/payment.py:196
 msgid "BitPay reported an error: {}"
 msgstr "BitPay meldde een fout: {}"
 
-#: pretix_bitpay/payment.py:222
+#: pretix_bitpay/payment.py:203
+#, fuzzy
+#| msgid ""
+#| "We had trouble communicating with Sofort. Please try again and contact "
+#| "support if the problem persists."
 msgid ""
-"We were unable to transfer the money back automatically. Please get in touch "
-"with the customer and transfer it back manually."
-msgstr ""
-"We konden het geld niet automatisch terugbetalen. Neem contact op met de "
-"klant en maak het handmatig over."
-
-#: pretix_bitpay/payment.py:228
-msgid "Your input was invalid, please try again."
-msgstr "Uw invoer was ongeldig, probeer het opnieuw."
-
-#: pretix_bitpay/payment.py:244
-msgid ""
-"We had trouble communicating with Sofort. Please try again and contact "
+"We had trouble communicating with BitPay. Please try again and contact "
 "support if the problem persists."
 msgstr ""
 "We hadden moeite met het communiceren met Sofort. Probeer het opnieuw, en "
 "neem contact met support op als dit probleem aanhoudt."
 
-#: pretix_bitpay/signals.py:29
+#: pretix_bitpay/signals.py:27
 msgid "BitPay reported an event: {}"
 msgstr "BitPay meldde een gebeurtenis: {}"
 
-#: pretix_bitpay/signals.py:52
+#: pretix_bitpay/signals.py:50
 msgid "BitPay client: Private Key"
 msgstr "BitPay-client: Privésleutel"
-
-#: pretix_bitpay/signals.py:60
-msgid "BitPay payment history"
-msgstr "BitPay-betalingsgeschiedenis"
-
-#: pretix_bitpay/signals.py:62
-msgid ""
-"This will remove payment-related history information. No download will be "
-"offered."
-msgstr ""
-"Dit zal betalings-gerelateerde historische informatie verwijderen. Er zal "
-"geen download worden aangeboden."
 
 #: pretix_bitpay/templates/pretix_bitpay/action_overpaid.html:5
 #, python-format
@@ -155,58 +122,31 @@ msgstr ""
 "terugbetaald. Wilt u de bijbehorende bestelling (%(order)s) als terugbetaald "
 "aanmerken?"
 
-#: pretix_bitpay/templates/pretix_bitpay/action_refund.html:14
-msgid "No"
-msgstr "Nee"
-
-#: pretix_bitpay/templates/pretix_bitpay/action_refund.html:17
-msgid "Yes, mark order as refunded"
-msgstr "Ja, merk bestelling aan als terugbetaald"
-
-#: pretix_bitpay/templates/pretix_bitpay/action_refund.html:19
-msgid "This action cannot be undone."
-msgstr "Deze actie kan niet ongedaan worden gemaakt."
-
 #: pretix_bitpay/templates/pretix_bitpay/checkout_payment_confirm.html:3
 #: pretix_bitpay/templates/pretix_bitpay/checkout_payment_form.html:2
+#, fuzzy
+#| msgid ""
+#| "After you submitted your order, we will redirect you to BitPay to "
+#| "complete your payment. You will then be redirected back here to get your "
+#| "tickets."
 msgid ""
-"After you submitted your order, we will redirect you to BitPay to complete "
-"your payment. You will then be redirected back here to get your tickets."
+"After you submitted your order, we will redirect you to a payment partner to "
+"complete your payment. You will then be redirected back here to get your "
+"tickets."
 msgstr ""
 "Nadat u uw bestelling heeft ingediend zullen we u naar BitPay doorverwijzen "
 "om uw betaling uit te voeren. U zal hierna naar hier worden teruggestuurd om "
 "uw tickets te krijgen."
 
-#: pretix_bitpay/templates/pretix_bitpay/control.html:5
-msgid "This order has been paid with BitPay."
-msgstr "Deze bestelling is betaald met BitPay."
-
-#: pretix_bitpay/templates/pretix_bitpay/control.html:9
-msgid ""
-"This order has been planned to be paid with BitPay and has been marked as "
-"refunded."
-msgstr ""
-"Deze bestelling werd gepland om te worden betaald via BitPay, en is "
-"aangemerkt als terugbetaald."
-
-#: pretix_bitpay/templates/pretix_bitpay/control.html:13
-#: pretix_bitpay/templates/pretix_bitpay/control.html:32
-msgid ""
-"This order has been planned to be paid with BitPay, but the payment has not "
-"yet been completed."
-msgstr ""
-"Deze bestelling werd gepland om te worden betaald met BitPay, maar de "
-"betaling is nog niet voltooid."
-
-#: pretix_bitpay/templates/pretix_bitpay/control.html:19
+#: pretix_bitpay/templates/pretix_bitpay/control.html:6
 msgid "Invoice ID"
 msgstr "Factuurnummer"
 
-#: pretix_bitpay/templates/pretix_bitpay/control.html:21
+#: pretix_bitpay/templates/pretix_bitpay/control.html:8
 msgid "Status"
 msgstr "Status"
 
-#: pretix_bitpay/templates/pretix_bitpay/control.html:27
+#: pretix_bitpay/templates/pretix_bitpay/control.html:14
 msgid "Error message"
 msgstr "Foutmelding"
 
@@ -240,25 +180,11 @@ msgstr "Is het venster om uw betaling uit te voeren niet geopend?"
 msgid "Click here in order to open the window."
 msgstr "Klik hier om het venster te openen."
 
-#: pretix_bitpay/views.py:108
+#: pretix_bitpay/views.py:117
 msgid "Your BitPay account has been disconnected."
 msgstr "De verbinding met uw BitPay-account is verbroken."
 
-#: pretix_bitpay/views.py:129
-msgid "The order cannot be marked as refunded as it is not marked as paid!"
-msgstr ""
-"De bestelling kan niet als terugbetaald worden aangemerkt, omdat hij niet is "
-"aangemerkt als betaald!"
-
-#: pretix_bitpay/views.py:133
-msgid ""
-"The order has been marked as refunded and the issue has been marked as "
-"resolved!"
-msgstr ""
-"De bestelling is aangemerkt als terugbetaald, en het dispuut is aangemerkt "
-"als opgelost!"
-
-#: pretix_bitpay/views.py:176
+#: pretix_bitpay/views.py:167
 msgid ""
 "Sorry, there was an error in the payment process. Please check the link in "
 "your emails to continue."
@@ -266,10 +192,87 @@ msgstr ""
 "Sorry, er trad een fout op in het betalingsproces. Klik op de link in uw "
 "email om door te gaan."
 
-#: pretix_bitpay/views.py:189
+#: pretix_bitpay/views.py:180
 msgid "You are already connected to BitPay."
 msgstr "U bent al verbonden met BitPay."
 
-#: pretix_bitpay/views.py:214
+#: pretix_bitpay/views.py:207 pretix_bitpay/views.py:216
 msgid "Communication with BitPay was not successful."
 msgstr "Communiceren met BitPay is niet gelukt."
+
+#~ msgid "Refund automatically?"
+#~ msgstr "Automatisch terugbetalen?"
+
+#~ msgid "Automatically refund charge with BitPay"
+#~ msgstr "Betaal kosten automatisch terug met BitPay"
+
+#~ msgid ""
+#~ "Do not send refund instruction to BitPay, only mark as refunded in pretix"
+#~ msgstr ""
+#~ "Stuur geen terugbetaalinstructie naar BitPay, merk alleen als betaald aan "
+#~ "in pretix"
+
+#~ msgid ""
+#~ "We had trouble communicating with Sofort. Please try again and get in "
+#~ "touch with us if this problem persists."
+#~ msgstr ""
+#~ "We hadden moeite met het communiceren met Sofort. Probeer het opnieuw, en "
+#~ "neem contact met ons op als dit probleem aanhoudt."
+
+#~ msgid ""
+#~ "We were unable to transfer the money back automatically. Please get in "
+#~ "touch with the customer and transfer it back manually."
+#~ msgstr ""
+#~ "We konden het geld niet automatisch terugbetalen. Neem contact op met de "
+#~ "klant en maak het handmatig over."
+
+#~ msgid "Your input was invalid, please try again."
+#~ msgstr "Uw invoer was ongeldig, probeer het opnieuw."
+
+#~ msgid "BitPay payment history"
+#~ msgstr "BitPay-betalingsgeschiedenis"
+
+#~ msgid ""
+#~ "This will remove payment-related history information. No download will be "
+#~ "offered."
+#~ msgstr ""
+#~ "Dit zal betalings-gerelateerde historische informatie verwijderen. Er zal "
+#~ "geen download worden aangeboden."
+
+#~ msgid "No"
+#~ msgstr "Nee"
+
+#~ msgid "Yes, mark order as refunded"
+#~ msgstr "Ja, merk bestelling aan als terugbetaald"
+
+#~ msgid "This action cannot be undone."
+#~ msgstr "Deze actie kan niet ongedaan worden gemaakt."
+
+#~ msgid "This order has been paid with BitPay."
+#~ msgstr "Deze bestelling is betaald met BitPay."
+
+#~ msgid ""
+#~ "This order has been planned to be paid with BitPay and has been marked as "
+#~ "refunded."
+#~ msgstr ""
+#~ "Deze bestelling werd gepland om te worden betaald via BitPay, en is "
+#~ "aangemerkt als terugbetaald."
+
+#~ msgid ""
+#~ "This order has been planned to be paid with BitPay, but the payment has "
+#~ "not yet been completed."
+#~ msgstr ""
+#~ "Deze bestelling werd gepland om te worden betaald met BitPay, maar de "
+#~ "betaling is nog niet voltooid."
+
+#~ msgid "The order cannot be marked as refunded as it is not marked as paid!"
+#~ msgstr ""
+#~ "De bestelling kan niet als terugbetaald worden aangemerkt, omdat hij niet "
+#~ "is aangemerkt als betaald!"
+
+#~ msgid ""
+#~ "The order has been marked as refunded and the issue has been marked as "
+#~ "resolved!"
+#~ msgstr ""
+#~ "De bestelling is aangemerkt als terugbetaald, en het dispuut is "
+#~ "aangemerkt als opgelost!"
