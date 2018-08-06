@@ -5,35 +5,24 @@ import urllib
 from collections import OrderedDict
 
 import requests
+from bitpay import key_utils
 from bitpay.client import Client
 from bitpay.exceptions import BitPayConnectionError, BitPayBitPayError, BitPayArgumentError
-from bitpay import key_utils
 from django import forms
-from django.contrib import messages
 from django.core import signing
+from django.http import HttpRequest
 from django.template.loader import get_template
 from django.urls import reverse
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
+from typing import Union
 
+from pretix.base.models import OrderPayment, OrderRefund
 from pretix.base.payment import BasePaymentProvider, PaymentException
-from pretix.base.services.orders import mark_order_refunded
 from pretix.multidomain.urlreverse import build_absolute_uri
 from .models import ReferencedBitPayObject
 
 logger = logging.getLogger(__name__)
-
-
-class RefundForm(forms.Form):
-    auto_refund = forms.ChoiceField(
-        initial='auto',
-        label=_('Refund automatically?'),
-        choices=(
-            ('auto', _('Automatically refund charge with BitPay')),
-            ('manual', _('Do not send refund instruction to BitPay, only mark as refunded in pretix'))
-        ),
-        widget=forms.RadioSelect,
-    )
 
 
 class BitPay(BasePaymentProvider):
@@ -50,7 +39,7 @@ class BitPay(BasePaymentProvider):
                 "<a href='{}' target='_blank' class='btn btn-default btn-lg'>{}</a> "
                 "</p>"
                 "<p>{}</p>"
-                "</form>" # This is a hell of a hack, sorry…
+                "</form>"  # This is a hell of a hack, sorry…
                 "<form class='form-inline' action='{}' method='GET' target='_blank'>"
                 "<input type='text' name='url' class='form-control' value='https://btcpay.lightbo.lt'> "
                 "<button class='btn btn-default'>{}</button>"
@@ -135,20 +124,21 @@ class BitPay(BasePaymentProvider):
     def client(self):
         return Client(api_uri=self.settings.url, pem=self.settings.pem)
 
-    def payment_perform(self, request, order) -> str:
-        request.session['payment_bitpay_order_secret'] = order.secret
+    def execute_payment(self, request: HttpRequest, payment: OrderPayment):
+        request.session['payment_bitpay_order_secret'] = payment.order.secret
 
         try:
             inv = self.client.create_invoice({
-                "price": float(order.total),
+                "price": float(payment.amount),
                 "currency": self.event.currency,
-                "orderId": order.full_code,
+                "orderId": payment.order.full_code,
                 "transactionSpeed": "medium",
                 "extendedNotifications": "true",
                 "notificationURL": build_absolute_uri(self.event, "plugins:pretix_bitpay:webhook"),
                 "redirectURL": build_absolute_uri(self.event, "plugins:pretix_bitpay:return", kwargs={
-                    'order': order.code,
-                    'hash': hashlib.sha1(order.secret.lower().encode()).hexdigest(),
+                    'order': payment.order.code,
+                    'payment': payment.pk,
+                    'hash': hashlib.sha1(payment.order.secret.lower().encode()).hexdigest(),
                 }),
                 # "buyer": {"email": "test@customer.com"},
                 "token": self.settings.token
@@ -157,62 +147,39 @@ class BitPay(BasePaymentProvider):
             logger.exception('Failure during bitpay payment.')
             raise PaymentException(_('We had trouble communicating with BitPay. Please try again and get in touch '
                                      'with us if this problem persists.'))
-        ReferencedBitPayObject.objects.get_or_create(order=order, reference=inv['id'])
-        order.payment_info = json.dumps(inv)
-        order.save(update_fields=['payment_info'])
+        ReferencedBitPayObject.objects.get_or_create(order=payment.order, payment=payment, reference=inv['id'])
+        payment.info = json.dumps(inv)
+        payment.save(update_fields=['info'])
         return self.redirect(request, inv['url'])
 
-    def order_pending_render(self, request, order) -> str:
-        retry = True
-        try:
-            if order.payment_info and json.loads(order.payment_info)['paymentState'] == 'PENDING':
-                retry = False
-        except KeyError:
-            pass
+    def payment_pending_render(self, request: HttpRequest, payment: OrderPayment):
         template = get_template('pretix_bitpay/pending.html')
         ctx = {'request': request, 'event': self.event, 'settings': self.settings,
-               'retry': retry, 'order': order}
+               'order': payment.order}
         return template.render(ctx)
 
-    def order_control_render(self, request, order) -> str:
-        if order.payment_info:
-            payment_info = json.loads(order.payment_info)
-        else:
-            payment_info = None
+    def payment_control_render(self, request: HttpRequest, payment: OrderPayment):
         template = get_template('pretix_bitpay/control.html')
         ctx = {'request': request, 'event': self.event, 'settings': self.settings,
-               'payment_info': payment_info, 'order': order, 'provname': self.verbose_name}
+               'payment_info': payment.info_data, 'order': payment.order, 'provname': self.verbose_name}
         return template.render(ctx)
 
-    def order_can_retry(self, order):
+    abort_pending_allowed = True
+
+    def payment_refund_supported(self, payment: OrderPayment):
         return True
 
-    @property
-    def refund_available(self):
+    def payment_partial_refund_supported(self, payment: OrderPayment):
         return True
 
-    def _refund_form(self, request):
-        return RefundForm(data=request.POST if request.method == "POST" else None)
-
-    def order_control_refund_render(self, order, request) -> str:
-        if self.refund_available:
-            template = get_template('pretix_bitpay/control_refund.html')
-            ctx = {
-                'request': request,
-                'form': self._refund_form(request),
-            }
-            return template.render(ctx)
-        else:
-            return super().order_control_refund_render(order, request)
-
-    def _refund(self, payment_info, order):
+    def _refund(self, refund):
         payload = json.dumps({
-            'token': payment_info.get('token'),
-            'amount': payment_info.get('price'),
-            'currency': payment_info.get('currency'),
-            'refundEmail': order.email
+            'token': refund.payment.info_data.get('token'),
+            'amount': refund.payment.info_data.get('price'),
+            'currency': refund.payment.info_data.get('currency'),
+            'refundEmail': refund.order.email
         })
-        uri = self.client.uri + "/invoices/" + payment_info.get('id') + "/refunds"
+        uri = self.client.uri + "/invoices/" + refund.payment.info_data.get('id') + "/refunds"
         xidentity = key_utils.get_compressed_public_key_from_pem(self.client.pem)
         xsignature = key_utils.sign(uri + payload, self.client.pem)
         headers = {"content-type": "application/json", 'accept': 'application/json', 'X-Identity': xidentity,
@@ -228,37 +195,32 @@ class BitPay(BasePaymentProvider):
             logger.exception('Failure during bitpay refund: {}'.format(e))
             raise PaymentException(_('BitPay reported an error: {}').format(e))
 
-    def order_control_refund_perform(self, request, order) -> "bool|str":
-        if order.payment_info:
-            payment_info = json.loads(order.payment_info)
-        else:
-            payment_info = None
-
-        if not payment_info or not self.refund_available:
-            mark_order_refunded(order, user=request.user)
-            messages.warning(request, _('We were unable to transfer the money back automatically. '
-                                        'Please get in touch with the customer and transfer it back manually.'))
-            return
-
-        f = self._refund_form(request)
-        if not f.is_valid():
-            messages.error(request, _('Your input was invalid, please try again.'))
-            return
-        elif f.cleaned_data.get('auto_refund') == 'manual':
-            order = mark_order_refunded(order, user=request.user)
-            order.payment_manual = True
-            order.save()
-            return
-
+    def execute_refund(self, refund: OrderRefund):
         try:
-            self._refund(
-                payment_info, order
-            )
-        except PaymentException as e:
-            messages.error(request, str(e))
+            self._refund(refund)
         except requests.exceptions.RequestException as e:
             logger.exception('BitPay error: %s' % str(e))
-            messages.error(request, _('We had trouble communicating with BitPay. Please try again and contact '
-                                      'support if the problem persists.'))
+            raise PaymentException(_('We had trouble communicating with BitPay. Please try again and contact '
+                                     'support if the problem persists.'))
         else:
-            mark_order_refunded(order, user=request.user)
+            refund.done()
+
+    def shred_payment_info(self, obj: Union[OrderPayment, OrderRefund]):
+        d = obj.info_data
+        for k, v in list(d.items()):
+            if v not in ('id', 'status', 'price', 'currency', 'invoiceTime', 'paymentSubtotals',
+                         'paymentTotals', 'transactionCurrency', 'amountPaid'):
+                d[k] = '█'
+        obj.info_data = d
+        obj.save()
+
+        for le in obj.order.all_logentries().filter(action_type="pretix_bitpay.event").exclude(data=""):
+            d = le.parsed_data
+            if 'data' in d:
+                for k, v in list(d['data'].items()):
+                    if v not in ('id', 'status', 'price', 'currency', 'invoiceTime', 'paymentSubtotals',
+                                 'paymentTotals', 'transactionCurrency', 'amountPaid'):
+                        d['data'][k] = '█'
+                le.data = json.dumps(d)
+                le.shredded = True
+                le.save(update_fields=['data', 'shredded'])
