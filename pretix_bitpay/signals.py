@@ -23,7 +23,7 @@ def pretixcontrol_logentry_display(sender, logentry, **kwargs):
         return
 
     data = json.loads(logentry.data)
-    event_type = data.get('event').get('name')
+    event_type = data.get('event').get('name', '?')
     return _('BitPay reported an event: {}').format(event_type)
 
 
