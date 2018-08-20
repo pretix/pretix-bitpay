@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: Dutch (pretix)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-06 12:38+0200\n"
-"PO-Revision-Date: 2018-06-25 19:00+0000\n"
+"PO-Revision-Date: 2018-08-20 12:01+0000\n"
 "Last-Translator: Maarten van den Berg <maartenberg1@gmail.com>\n"
-"Language-Team: Dutch <https://translate.pretix.eu/projects/pretix/pretix-"
-"plugin-bitpay/nl/>\n"
+"Language-Team: Dutch <https://translate.pretix.eu/projects/pretix/"
+"pretix-plugin-bitpay/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,10 +53,12 @@ msgid ""
 "Alternatively, you can connect with a third-party provider using a BitPay-"
 "compatible API. Enterthe URL here you want to connect to."
 msgstr ""
+"U kunt ook verbinden met een andere betalingsprovider met een BitPay-"
+"compatibele API. Voer de URL waar u mee wilt verbinden in."
 
 #: pretix_bitpay/payment.py:68
 msgid "Start pairing"
-msgstr ""
+msgstr "Begin koppelen"
 
 #: pretix_bitpay/payment.py:78
 msgid "Disconnect from BitPay"
@@ -79,16 +81,12 @@ msgid "BitPay reported an error: {}"
 msgstr "BitPay meldde een fout: {}"
 
 #: pretix_bitpay/payment.py:203
-#, fuzzy
-#| msgid ""
-#| "We had trouble communicating with Sofort. Please try again and contact "
-#| "support if the problem persists."
 msgid ""
 "We had trouble communicating with BitPay. Please try again and contact "
 "support if the problem persists."
 msgstr ""
-"We hadden moeite met het communiceren met Sofort. Probeer het opnieuw, en "
-"neem contact met support op als dit probleem aanhoudt."
+"We hadden moeite met het communiceren met BitPay. Probeer het opnieuw, en "
+"neem contact met ons op als dit probleem aanhoudt."
 
 #: pretix_bitpay/signals.py:27
 msgid "BitPay reported an event: {}"
@@ -124,19 +122,14 @@ msgstr ""
 
 #: pretix_bitpay/templates/pretix_bitpay/checkout_payment_confirm.html:3
 #: pretix_bitpay/templates/pretix_bitpay/checkout_payment_form.html:2
-#, fuzzy
-#| msgid ""
-#| "After you submitted your order, we will redirect you to BitPay to "
-#| "complete your payment. You will then be redirected back here to get your "
-#| "tickets."
 msgid ""
 "After you submitted your order, we will redirect you to a payment partner to "
 "complete your payment. You will then be redirected back here to get your "
 "tickets."
 msgstr ""
-"Nadat u uw bestelling heeft ingediend zullen we u naar BitPay doorverwijzen "
-"om uw betaling uit te voeren. U zal hierna naar hier worden teruggestuurd om "
-"uw tickets te krijgen."
+"Nadat u uw bestelling heeft ingediend zullen we u naar een betalingspartner "
+"doorverwijzen om uw betaling uit te voeren. U zal hierna naar hier worden "
+"teruggestuurd om uw tickets te krijgen."
 
 #: pretix_bitpay/templates/pretix_bitpay/control.html:6
 msgid "Invoice ID"
