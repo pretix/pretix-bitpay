@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-06 12:38+0200\n"
-"PO-Revision-Date: 2018-08-17 08:15+0000\n"
+"PO-Revision-Date: 2018-09-01 19:00+0000\n"
 "Last-Translator: Yunus Fırat Pişkin <firat.piskin@idvlabs.com>\n"
 "Language-Team: Turkish <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-bitpay/tr/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.1.1\n"
 
 #: pretix_bitpay/__init__.py:8 pretix_bitpay/__init__.py:11
 #: pretix_bitpay/payment.py:30
@@ -145,7 +145,7 @@ msgstr "Durum"
 
 #: pretix_bitpay/templates/pretix_bitpay/control.html:14
 msgid "Error message"
-msgstr "Hata Mesajı"
+msgstr "Hata mesajı"
 
 #: pretix_bitpay/templates/pretix_bitpay/control_refund.html:5
 msgid ""
