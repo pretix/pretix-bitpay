@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-06 12:38+0200\n"
-"PO-Revision-Date: 2018-08-25 18:00+0000\n"
+"PO-Revision-Date: 2018-09-11 15:04+0000\n"
 "Last-Translator: oocf <oswaldocerna@gmail.com>\n"
 "Language-Team: Spanish <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-bitpay/es/>\n"
@@ -117,7 +117,7 @@ msgstr ""
 
 #: pretix_bitpay/templates/pretix_bitpay/control.html:6
 msgid "Invoice ID"
-msgstr ""
+msgstr "Número de factura"
 
 #: pretix_bitpay/templates/pretix_bitpay/control.html:8
 msgid "Status"
@@ -142,15 +142,15 @@ msgstr ""
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:17
 msgid "The payment process has started in a new window."
-msgstr ""
+msgstr "El proceso de pago ha comenzado en una nueva ventana."
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:20
 msgid "The window to enter your payment data was not opened or was closed?"
-msgstr ""
+msgstr "¿La ventana para introducir sus datos de pago no se abrió o se cerró?"
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:24
 msgid "Click here in order to open the window."
-msgstr ""
+msgstr "Haga clic aquí para abrir la ventana."
 
 #: pretix_bitpay/views.py:117
 msgid "Your BitPay account has been disconnected."
@@ -161,6 +161,8 @@ msgid ""
 "Sorry, there was an error in the payment process. Please check the link in "
 "your emails to continue."
 msgstr ""
+"Lo sentimos, hubo un error en el proceso de pago. Por favor, compruebe el "
+"enlace en sus correos electrónicos para continuar."
 
 #: pretix_bitpay/views.py:180
 msgid "You are already connected to BitPay."
