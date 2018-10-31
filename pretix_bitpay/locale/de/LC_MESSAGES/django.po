@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-06 12:38+0200\n"
-"PO-Revision-Date: 2018-06-21 09:41+0000\n"
+"PO-Revision-Date: 2018-10-31 14:24+0000\n"
 "Last-Translator: Raphael Michel <michel@rami.io>\n"
-"Language-Team: German <https://translate.pretix.eu/projects/pretix/pretix-"
-"plugin-bitpay/de/>\n"
+"Language-Team: German <https://translate.pretix.eu/projects/pretix/"
+"pretix-plugin-bitpay/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.1.1\n"
 
 #: pretix_bitpay/__init__.py:8 pretix_bitpay/__init__.py:11
 #: pretix_bitpay/payment.py:30
@@ -53,10 +53,13 @@ msgid ""
 "Alternatively, you can connect with a third-party provider using a BitPay-"
 "compatible API. Enterthe URL here you want to connect to."
 msgstr ""
+"Alternativ können Sie einen Drittanbieter mit BitPay-kompatibler "
+"Schnittstelle anbinden. Geben Sie die Adresse ein, zu der Sie sich verbinden "
+"wollen."
 
 #: pretix_bitpay/payment.py:68
 msgid "Start pairing"
-msgstr ""
+msgstr "Pairing beginnen"
 
 #: pretix_bitpay/payment.py:78
 msgid "Disconnect from BitPay"
@@ -121,19 +124,14 @@ msgstr ""
 
 #: pretix_bitpay/templates/pretix_bitpay/checkout_payment_confirm.html:3
 #: pretix_bitpay/templates/pretix_bitpay/checkout_payment_form.html:2
-#, fuzzy
-#| msgid ""
-#| "After you submitted your order, we will redirect you to BitPay to "
-#| "complete your payment. You will then be redirected back here to get your "
-#| "tickets."
 msgid ""
 "After you submitted your order, we will redirect you to a payment partner to "
 "complete your payment. You will then be redirected back here to get your "
 "tickets."
 msgstr ""
-"Nach Abschluss Ihrer Bestellung werden wir Sie zu BitPay weiterleiten um "
-"Ihre Zahlung abzuschließen. Anschließend werden Sie zurückgeleitet um hier "
-"Ihre Tickets herunterzuladen."
+"Nach Abschluss Ihrer Bestellung werden wir Sie zu einem "
+"Zahlungsdienstleister weiterleiten um Ihre Zahlung abzuschließen. "
+"Anschließend werden Sie zurückgeleitet um hier Ihre Tickets herunterzuladen."
 
 #: pretix_bitpay/templates/pretix_bitpay/control.html:6
 msgid "Invoice ID"
