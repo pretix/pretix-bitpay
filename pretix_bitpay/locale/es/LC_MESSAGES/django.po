@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-06 12:38+0200\n"
-"PO-Revision-Date: 2018-09-11 15:04+0000\n"
+"PO-Revision-Date: 2018-11-07 21:38+0000\n"
 "Last-Translator: oocf <oswaldocerna@gmail.com>\n"
 "Language-Team: Spanish <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-bitpay/es/>\n"
@@ -22,15 +22,15 @@ msgstr ""
 #: pretix_bitpay/__init__.py:8 pretix_bitpay/__init__.py:11
 #: pretix_bitpay/payment.py:30
 msgid "BitPay"
-msgstr ""
+msgstr "BitPay"
 
 #: pretix_bitpay/__init__.py:14
 msgid "This plugin allows you to receive Bitcoin payments via BitPay"
-msgstr ""
+msgstr "Este plugin te permite recibir pagos con Bitcoin a través de BitPay"
 
 #: pretix_bitpay/payment.py:31
 msgid "Bitcoin"
-msgstr ""
+msgstr "Bitcoin"
 
 #: pretix_bitpay/payment.py:49
 msgid ""
@@ -42,11 +42,11 @@ msgstr ""
 
 #: pretix_bitpay/payment.py:56
 msgid "Connect with BitPay"
-msgstr ""
+msgstr "Conectar con BitPay"
 
 #: pretix_bitpay/payment.py:61
 msgid "Connect with test.bitpay.com"
-msgstr ""
+msgstr "Conectar con test.bitpay.com"
 
 #: pretix_bitpay/payment.py:62
 msgid ""
@@ -56,15 +56,15 @@ msgstr ""
 
 #: pretix_bitpay/payment.py:68
 msgid "Start pairing"
-msgstr ""
+msgstr "Inciar emparejamiento"
 
 #: pretix_bitpay/payment.py:78
 msgid "Disconnect from BitPay"
-msgstr ""
+msgstr "Desconectar de BitPay"
 
 #: pretix_bitpay/payment.py:89
 msgid "API URL"
-msgstr ""
+msgstr "URL API"
 
 #: pretix_bitpay/payment.py:148 pretix_bitpay/payment.py:191
 msgid ""
@@ -74,7 +74,7 @@ msgstr ""
 
 #: pretix_bitpay/payment.py:196
 msgid "BitPay reported an error: {}"
-msgstr ""
+msgstr "BitPay reportó un error: {}"
 
 #: pretix_bitpay/payment.py:203
 msgid ""
@@ -84,11 +84,11 @@ msgstr ""
 
 #: pretix_bitpay/signals.py:27
 msgid "BitPay reported an event: {}"
-msgstr ""
+msgstr "BitPay reportó un evento: {}"
 
 #: pretix_bitpay/signals.py:50
 msgid "BitPay client: Private Key"
-msgstr ""
+msgstr "BitPay cliente: Clave Privada"
 
 #: pretix_bitpay/templates/pretix_bitpay/action_overpaid.html:5
 #, python-format
@@ -154,7 +154,7 @@ msgstr "Haga clic aquí para abrir la ventana."
 
 #: pretix_bitpay/views.py:117
 msgid "Your BitPay account has been disconnected."
-msgstr ""
+msgstr "Tu cuenta de BitPay ha sido desconectada."
 
 #: pretix_bitpay/views.py:167
 msgid ""
@@ -166,8 +166,8 @@ msgstr ""
 
 #: pretix_bitpay/views.py:180
 msgid "You are already connected to BitPay."
-msgstr ""
+msgstr "Ya estás conectado a BitPay."
 
 #: pretix_bitpay/views.py:207 pretix_bitpay/views.py:216
 msgid "Communication with BitPay was not successful."
-msgstr ""
+msgstr "La comunicación con BitPay no fue exitosa."
