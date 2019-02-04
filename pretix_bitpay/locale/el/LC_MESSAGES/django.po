@@ -8,29 +8,26 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-06 12:38+0200\n"
-"PO-Revision-Date: 2018-11-07 21:38+0000\n"
-"Last-Translator: oocf <oswaldocerna@gmail.com>\n"
-"Language-Team: Spanish <https://translate.pretix.eu/projects/pretix/"
-"pretix-plugin-bitpay/es/>\n"
-"Language: es\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.1.1\n"
 
 #: pretix_bitpay/__init__.py:8 pretix_bitpay/__init__.py:11
 #: pretix_bitpay/payment.py:30
 msgid "BitPay"
-msgstr "BitPay"
+msgstr ""
 
 #: pretix_bitpay/__init__.py:14
 msgid "This plugin allows you to receive Bitcoin payments via BitPay"
-msgstr "Este plugin te permite recibir pagos con Bitcoin a través de BitPay"
+msgstr ""
 
 #: pretix_bitpay/payment.py:31
 msgid "Bitcoin"
-msgstr "Bitcoin"
+msgstr ""
 
 #: pretix_bitpay/payment.py:49
 msgid ""
@@ -42,11 +39,11 @@ msgstr ""
 
 #: pretix_bitpay/payment.py:56
 msgid "Connect with BitPay"
-msgstr "Conectar con BitPay"
+msgstr ""
 
 #: pretix_bitpay/payment.py:61
 msgid "Connect with test.bitpay.com"
-msgstr "Conectar con test.bitpay.com"
+msgstr ""
 
 #: pretix_bitpay/payment.py:62
 msgid ""
@@ -56,15 +53,15 @@ msgstr ""
 
 #: pretix_bitpay/payment.py:68
 msgid "Start pairing"
-msgstr "Inciar emparejamiento"
+msgstr ""
 
 #: pretix_bitpay/payment.py:78
 msgid "Disconnect from BitPay"
-msgstr "Desconectar de BitPay"
+msgstr ""
 
 #: pretix_bitpay/payment.py:89
 msgid "API URL"
-msgstr "URL API"
+msgstr ""
 
 #: pretix_bitpay/payment.py:148 pretix_bitpay/payment.py:191
 msgid ""
@@ -74,7 +71,7 @@ msgstr ""
 
 #: pretix_bitpay/payment.py:196
 msgid "BitPay reported an error: {}"
-msgstr "BitPay reportó un error: {}"
+msgstr ""
 
 #: pretix_bitpay/payment.py:203
 msgid ""
@@ -84,11 +81,11 @@ msgstr ""
 
 #: pretix_bitpay/signals.py:27
 msgid "BitPay reported an event: {}"
-msgstr "BitPay reportó un evento: {}"
+msgstr ""
 
 #: pretix_bitpay/signals.py:50
 msgid "BitPay client: Private Key"
-msgstr "BitPay cliente: Clave Privada"
+msgstr ""
 
 #: pretix_bitpay/templates/pretix_bitpay/action_overpaid.html:5
 #, python-format
@@ -117,15 +114,15 @@ msgstr ""
 
 #: pretix_bitpay/templates/pretix_bitpay/control.html:6
 msgid "Invoice ID"
-msgstr "Número de factura"
+msgstr ""
 
 #: pretix_bitpay/templates/pretix_bitpay/control.html:8
 msgid "Status"
-msgstr "Estado"
+msgstr ""
 
 #: pretix_bitpay/templates/pretix_bitpay/control.html:14
 msgid "Error message"
-msgstr "Mensaje de error"
+msgstr ""
 
 #: pretix_bitpay/templates/pretix_bitpay/control_refund.html:5
 msgid ""
@@ -142,32 +139,30 @@ msgstr ""
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:17
 msgid "The payment process has started in a new window."
-msgstr "El proceso de pago ha comenzado en una nueva ventana."
+msgstr ""
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:20
 msgid "The window to enter your payment data was not opened or was closed?"
-msgstr "¿La ventana para introducir sus datos de pago no se abrió o se cerró?"
+msgstr ""
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:24
 msgid "Click here in order to open the window."
-msgstr "Haga clic aquí para abrir la ventana."
+msgstr ""
 
 #: pretix_bitpay/views.py:117
 msgid "Your BitPay account has been disconnected."
-msgstr "Tu cuenta de BitPay ha sido desconectada."
+msgstr ""
 
 #: pretix_bitpay/views.py:167
 msgid ""
 "Sorry, there was an error in the payment process. Please check the link in "
 "your emails to continue."
 msgstr ""
-"Lo sentimos, hubo un error en el proceso de pago. Por favor, compruebe el "
-"enlace en sus correos electrónicos para continuar."
 
 #: pretix_bitpay/views.py:180
 msgid "You are already connected to BitPay."
-msgstr "Ya estás conectado a BitPay."
+msgstr ""
 
 #: pretix_bitpay/views.py:207 pretix_bitpay/views.py:216
 msgid "Communication with BitPay was not successful."
-msgstr "La comunicación con BitPay no fue exitosa."
+msgstr ""
