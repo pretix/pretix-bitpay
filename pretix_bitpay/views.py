@@ -100,11 +100,21 @@ def process_invoice(order, payment, invoice_id):
                 payment.state = OrderPayment.PAYMENT_STATE_FAILED
                 payment.info = json.dumps(src)
                 payment.save()
+                payment.order.log_action('pretix.event.order.payment.failed', {
+                    'local_id': payment.local_id,
+                    'provider': payment.provider,
+                    'info': json.dumps(src)
+                })
             elif order.state in OrderPayment.PAYMENT_STATE_CONFIRMED:
                 payment.state = OrderPayment.PAYMENT_STATE_FAILED
                 payment.info = json.dumps(src)
                 payment.save()
                 payment.create_external_refund()
+                payment.order.log_action('pretix.event.order.payment.failed', {
+                    'local_id': payment.local_id,
+                    'provider': payment.provider,
+                    'info': json.dumps(src)
+                })
 
     return HttpResponse(status=200)
 

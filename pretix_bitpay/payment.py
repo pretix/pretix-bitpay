@@ -120,6 +120,12 @@ class BitPay(BasePaymentProvider):
     def payment_is_valid_session(self, request):
         return True
 
+    @property
+    def test_mode_message(self):
+        if '//test.bitpay.com' in self.settings.url:
+            return _('The BitPay plugin is operating in test mode. No money will actually be transferred.')
+        return None
+
     @cached_property
     def client(self):
         return Client(api_uri=self.settings.url, pem=self.settings.pem)
