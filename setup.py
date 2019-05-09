@@ -25,7 +25,7 @@ cmdclass = {
 
 setup(
     name='pretix-bitpay',
-    version='1.0.0',
+    version='1.1.0',
     description='This plugin allows accepting crypto currency payments in pretix via BitPay.',
     long_description=long_description,
     url='https://github.com/pretix/pretix-bitpay',
