@@ -8,30 +8,26 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-06 12:38+0200\n"
-"PO-Revision-Date: 2019-05-29 22:00+0000\n"
-"Last-Translator: ThanosTeste <testebasisth@unisystems.eu>\n"
-"Language-Team: Greek <https://translate.pretix.eu/projects/pretix/"
-"pretix-plugin-bitpay/el/>\n"
-"Language: el\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.5.1\n"
 
 #: pretix_bitpay/__init__.py:8 pretix_bitpay/__init__.py:11
 #: pretix_bitpay/payment.py:30
 msgid "BitPay"
-msgstr "BitPay"
+msgstr ""
 
 #: pretix_bitpay/__init__.py:14
 msgid "This plugin allows you to receive Bitcoin payments via BitPay"
 msgstr ""
-"Αυτό το plugin σάς επιτρέπει να λαμβάνετε πληρωμές Bitcoin μέσω του BitPay"
 
 #: pretix_bitpay/payment.py:31
 msgid "Bitcoin"
-msgstr "Bitcoin"
+msgstr ""
 
 #: pretix_bitpay/payment.py:49
 msgid ""
@@ -40,48 +36,38 @@ msgid ""
 "account. A BitPay site will open in a new tab. Return to this page and "
 "refresh it after you authorized the token at BitPay."
 msgstr ""
-"Για να δεχτείτε πληρωμές μέσω του BitPay, θα χρειαστείτε ένα λογαριασμό στο "
-"BitPay. Κάνοντας κλικ στο παρακάτω κουμπί, μπορείτε να συνδέσετε το pretix "
-"με το λογαριασμό BitPay. Θα ανοίξει ένας ιστότοπος BitPay σε μια νέα "
-"καρτέλα. Επιστρέψτε σε αυτήν τη σελίδα και ανανεώστε την μετά την "
-"εξουσιοδότηση του διακριτικού στο BitPay."
 
 #: pretix_bitpay/payment.py:56
 msgid "Connect with BitPay"
-msgstr "Συνδεθείτε με το BitPay"
+msgstr ""
 
 #: pretix_bitpay/payment.py:61
 msgid "Connect with test.bitpay.com"
-msgstr "Συνδεθείτε με το test.bitpay.com"
+msgstr ""
 
 #: pretix_bitpay/payment.py:62
 msgid ""
 "Alternatively, you can connect with a third-party provider using a BitPay-"
 "compatible API. Enterthe URL here you want to connect to."
 msgstr ""
-"Εναλλακτικά, μπορείτε να συνδεθείτε με έναν πάροχο τρίτου μέρους "
-"χρησιμοποιώντας ένα API συμβατό με BitPay. Εισαγάγετε τη διεύθυνση URL στην "
-"οποία θέλετε να συνδεθείτε."
 
 #: pretix_bitpay/payment.py:68
 msgid "Start pairing"
-msgstr "Ξεκινήστε την αντιστοίχιση"
+msgstr ""
 
 #: pretix_bitpay/payment.py:78
 msgid "Disconnect from BitPay"
-msgstr "Αποσύνδεση από το BitPay"
+msgstr ""
 
 #: pretix_bitpay/payment.py:89
 msgid "API URL"
-msgstr "Διεύθυνση URL API"
+msgstr ""
 
 #: pretix_bitpay/payment.py:148 pretix_bitpay/payment.py:191
 msgid ""
 "We had trouble communicating with BitPay. Please try again and get in touch "
 "with us if this problem persists."
 msgstr ""
-"Είχαμε προβλήματα επικοινωνίας με το BitPay. Δοκιμάστε ξανά και "
-"επικοινωνήστε μαζί μας αν το πρόβλημα παραμένει."
 
 #: pretix_bitpay/payment.py:196
 msgid "BitPay reported an error: {}"
