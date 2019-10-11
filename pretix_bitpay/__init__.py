@@ -10,9 +10,9 @@ class BitpayApp(AppConfig):
     class PretixPluginMeta:
         name = _("BitPay")
         author = "Raphael Michel"
-        version = '1.1.0'
+        version = '1.2.0'
         description = _("This plugin allows you to receive Bitcoin payments " +
-                        "via BitPay")
+                        "via BitPay-compatible payment providers.")
 
     def ready(self):
         from . import signals   # NOQA
@@ -21,9 +21,9 @@ class BitpayApp(AppConfig):
     def compatibility_errors(self):
         errs = []
         try:
-            import bitpay  # NOQA
+            import btcpay  # NOQA
         except ImportError:
-            errs.append("Python package 'bitpay' is not installed.")
+            errs.append("Python package 'btcpay' is not installed.")
         return errs
 
 
