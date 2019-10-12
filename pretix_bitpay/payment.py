@@ -3,11 +3,10 @@ import json
 import logging
 import urllib
 from collections import OrderedDict
+from typing import Union
 
 import requests
-from bitpay import key_utils
-from bitpay.client import Client
-from bitpay.exceptions import BitPayConnectionError, BitPayBitPayError, BitPayArgumentError
+from btcpay import BTCPayClient, crypto
 from django import forms
 from django.core import signing
 from django.http import HttpRequest
@@ -15,11 +14,11 @@ from django.template.loader import get_template
 from django.urls import reverse
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
-from typing import Union
-
 from pretix.base.models import OrderPayment, OrderRefund
 from pretix.base.payment import BasePaymentProvider, PaymentException
 from pretix.multidomain.urlreverse import build_absolute_uri
+from requests import HTTPError
+
 from .models import ReferencedBitPayObject
 
 logger = logging.getLogger(__name__)
@@ -59,7 +58,7 @@ class BitPay(BasePaymentProvider):
                     'event': self.event.slug,
                 }) + '?test=1',
                 _('Connect with test.bitpay.com'),
-                _('Alternatively, you can connect with a third-party provider using a BitPay-compatible API. Enter'
+                _('Alternatively, you can connect with a third-party provider using a BitPay-compatible API. Enter '
                   'the URL here you want to connect to.'),
                 reverse('plugins:pretix_bitpay:auth.start', kwargs={
                     'organizer': self.event.organizer.slug,
@@ -128,7 +127,7 @@ class BitPay(BasePaymentProvider):
 
     @cached_property
     def client(self):
-        return Client(api_uri=self.settings.url, pem=self.settings.pem)
+        return BTCPayClient(host=self.settings.url, pem=self.settings.pem, tokens={'merchant': self.settings.token})
 
     def execute_payment(self, request: HttpRequest, payment: OrderPayment):
         request.session['payment_bitpay_order_secret'] = payment.order.secret
@@ -149,7 +148,7 @@ class BitPay(BasePaymentProvider):
                 # "buyer": {"email": "test@customer.com"},
                 "token": self.settings.token
             })
-        except (BitPayConnectionError, BitPayBitPayError, BitPayArgumentError) as e:
+        except HTTPError as e:
             logger.exception('Failure during bitpay payment.')
             raise PaymentException(_('We had trouble communicating with BitPay. Please try again and get in touch '
                                      'with us if this problem persists.'))
@@ -186,8 +185,8 @@ class BitPay(BasePaymentProvider):
             'refundEmail': refund.order.email
         })
         uri = self.client.uri + "/invoices/" + refund.payment.info_data.get('id') + "/refunds"
-        xidentity = key_utils.get_compressed_public_key_from_pem(self.client.pem)
-        xsignature = key_utils.sign(uri + payload, self.client.pem)
+        xidentity = crypto.get_compressed_public_key_from_pem(self.client.pem)
+        xsignature = crypto.sign(uri + payload, self.client.pem)
         headers = {"content-type": "application/json", 'accept': 'application/json', 'X-Identity': xidentity,
                    'X-Signature': xsignature, 'X-accept-version': '2.0.0'}
         try:

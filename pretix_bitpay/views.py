@@ -4,7 +4,7 @@ import logging
 from decimal import Decimal
 
 import requests
-from bitpay import key_utils
+from btcpay import crypto
 from django.conf import settings
 from django.contrib import messages
 from django.core import signing
@@ -197,9 +197,9 @@ def auth_start(request, **kwargs):
     pem = request.event.settings.payment_bitpay_pem
     if not pem:
         gs = GlobalSettingsObject()
-        pem = gs.settings.payment_bitpay_pem = key_utils.generate_pem()
+        pem = gs.settings.payment_bitpay_pem = crypto.generate_privkey()
 
-    sin = key_utils.get_sin_from_pem(pem)
+    sin = crypto.get_sin_from_pem(pem)
     if request.GET.get('url'):
         url = request.GET.get('url')
     else:

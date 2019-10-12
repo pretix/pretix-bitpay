@@ -25,15 +25,16 @@ cmdclass = {
 
 setup(
     name='pretix-bitpay',
-    version='1.1.0',
-    description='This plugin allows accepting crypto currency payments in pretix via BitPay.',
+    version='1.2.0',
+    description='This plugin allows accepting crypto currency payments in pretix via BitPay-compatible payment '
+                'providers.',
     long_description=long_description,
     url='https://github.com/pretix/pretix-bitpay',
     author='Raphael Michel',
     author_email='michel@rami.io',
     license='Apache Software License',
 
-    install_requires=['bitpay'],
+    install_requires=['btcpay-python'],
     packages=find_packages(exclude=['tests', 'tests.*']),
     include_package_data=True,
     cmdclass=cmdclass,
