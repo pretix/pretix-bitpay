@@ -3,6 +3,7 @@ import json
 import logging
 import urllib
 from collections import OrderedDict
+from json import JSONDecodeError
 from typing import Union
 
 import requests
@@ -196,7 +197,11 @@ class BitPay(BasePaymentProvider):
             raise PaymentException(_('We had trouble communicating with BitPay. Please try again and get in touch '
                                      'with us if this problem persists.'))
         if not response.ok:
-            e = response.json()['error']
+            try:
+                e = response.json()['error']
+            except JSONDecodeError:
+                e = response
+
             logger.exception('Failure during bitpay refund: {}'.format(e))
             raise PaymentException(_('BitPay reported an error: {}').format(e))
 
