@@ -13,7 +13,7 @@ from django.http import HttpRequest
 from django.template.loader import get_template
 from django.urls import reverse
 from django.utils.functional import cached_property
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _  # NoQA
 from pretix.base.models import OrderPayment, OrderRefund
 from pretix.base.payment import BasePaymentProvider, PaymentException
 from pretix.multidomain.urlreverse import build_absolute_uri
@@ -97,8 +97,8 @@ class BitPay(BasePaymentProvider):
         if request.session.get('iframe_session', False):
             signer = signing.Signer(salt='safe-redirect')
             return (
-                build_absolute_uri(request.event, 'plugins:pretix_bitpay:redirect') + '?url=' +
-                urllib.parse.quote(signer.sign(url))
+                build_absolute_uri(request.event, 'plugins:pretix_bitpay:redirect') + '?url='
+                + urllib.parse.quote(signer.sign(url))
             )
         else:
             return str(url)
@@ -148,7 +148,7 @@ class BitPay(BasePaymentProvider):
                 # "buyer": {"email": "test@customer.com"},
                 "token": self.settings.token
             })
-        except HTTPError as e:
+        except HTTPError:
             logger.exception('Failure during bitpay payment.')
             raise PaymentException(_('We had trouble communicating with BitPay. Please try again and get in touch '
                                      'with us if this problem persists.'))
@@ -184,7 +184,7 @@ class BitPay(BasePaymentProvider):
             'currency': refund.payment.info_data.get('currency'),
             'refundEmail': refund.order.email
         })
-        uri = self.client.uri + "/invoices/" + refund.payment.info_data.get('id') + "/refunds"
+        uri = self.client.host + "/invoices/" + refund.payment.info_data.get('id') + "/refunds"
         xidentity = crypto.get_compressed_public_key_from_pem(self.client.pem)
         xsignature = crypto.sign(uri + payload, self.client.pem)
         headers = {"content-type": "application/json", 'accept': 'application/json', 'X-Identity': xidentity,
