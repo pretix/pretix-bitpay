@@ -22,7 +22,6 @@ from django.views.decorators.http import require_POST
 
 from pretix.base.models import Order, Quota, OrderPayment
 from pretix.base.services.locking import LockTimeoutException
-from pretix.base.settings import GlobalSettingsObject
 from pretix.control.permissions import event_permission_required
 from pretix.multidomain.urlreverse import eventreverse
 from .models import ReferencedBitPayObject
@@ -194,11 +193,10 @@ def auth_start(request, **kwargs):
             'provider': 'bitpay'
         }))
     request.session['payment_bitpay_auth_event'] = request.event.pk
-    pem = request.event.settings.payment_bitpay_pem
-    if not pem:
-        gs = GlobalSettingsObject()
-        pem = gs.settings.payment_bitpay_pem = crypto.generate_privkey()
 
+    request.event.settings.payment_bitpay_pem = crypto.generate_privkey()
+
+    pem = request.event.settings.payment_bitpay_pem
     sin = crypto.get_sin_from_pem(pem)
     if request.GET.get('url'):
         url = request.GET.get('url')

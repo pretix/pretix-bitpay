@@ -1,13 +1,11 @@
 import json
-from collections import OrderedDict
 
-from django import forms
 from django.dispatch import receiver
 from django.template.loader import get_template
 from django.utils.translation import ugettext_lazy as _
 
 from pretix.base.signals import (
-    logentry_display, register_global_settings,
+    logentry_display,
     register_payment_providers, requiredaction_display, )
 
 
@@ -41,14 +39,3 @@ def pretixcontrol_action_display(sender, action, request, **kwargs):
 
     ctx = {'data': data, 'event': sender, 'action': action}
     return template.render(ctx, request)
-
-
-@receiver(register_global_settings, dispatch_uid='bitpay_global_settings')
-def register_global_settings(sender, **kwargs):
-    return OrderedDict([
-        ('payment_bitpay_pem', forms.CharField(
-            label=_('BitPay client: Private Key'),
-            required=False,
-            widget=forms.Textarea
-        )),
-    ])
