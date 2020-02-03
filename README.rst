@@ -20,16 +20,6 @@ Development setup
    the 'plugins' tab in the settings.
 
 
-Generating a private key
-------------------------
-
-You need a system-wide private key::
-
-    from bitpay import key_utils
-    pem = key_utils.generate_pem()
-    print(pem)
-
-
 License
 -------
 
