@@ -10,6 +10,7 @@ class BitpayApp(AppConfig):
     class PretixPluginMeta:
         name = _("BitPay")
         author = "Raphael Michel"
+        category = 'PAYMENT'
         version = '1.3.0'
         description = _("This plugin allows you to receive Bitcoin payments " +
                         "via BitPay-compatible payment providers.")
