@@ -2,7 +2,7 @@ import json
 
 from django.dispatch import receiver
 from django.template.loader import get_template
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from pretix.base.signals import (
     logentry_display,
