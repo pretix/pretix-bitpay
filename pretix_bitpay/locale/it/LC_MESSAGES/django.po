@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-06 12:38+0200\n"
-"PO-Revision-Date: 2020-06-15 06:00+0000\n"
+"PO-Revision-Date: 2020-06-24 15:00+0000\n"
 "Last-Translator: Frank <webappconcept@gmail.com>\n"
 "Language-Team: Italian <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-bitpay/it/>\n"
@@ -142,11 +142,12 @@ msgstr ""
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:17
 msgid "The payment process has started in a new window."
-msgstr ""
+msgstr "Il processo di pagamento è stato inziato in una nuova finestra."
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:20
 msgid "The window to enter your payment data was not opened or was closed?"
 msgstr ""
+"La finestra di inserimento dati di PayPal non è stata aperta o si è chiusa?"
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:24
 msgid "Click here in order to open the window."
@@ -161,6 +162,8 @@ msgid ""
 "Sorry, there was an error in the payment process. Please check the link in "
 "your emails to continue."
 msgstr ""
+"Spiacenti, c'è stato un problema durante il pagamento. Segui il link "
+"nell'email per continuare."
 
 #: pretix_bitpay/views.py:180
 msgid "You are already connected to BitPay."
