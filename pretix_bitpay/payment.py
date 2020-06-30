@@ -7,7 +7,6 @@ from json import JSONDecodeError
 from typing import Union
 
 import requests
-from btcpay import BTCPayClient, crypto
 from django import forms
 from django.core import signing
 from django.http import HttpRequest
@@ -128,6 +127,7 @@ class BitPay(BasePaymentProvider):
 
     @cached_property
     def client(self):
+        from btcpay import BTCPayClient
         return BTCPayClient(host=self.settings.url, pem=self.settings.pem, tokens={'merchant': self.settings.token})
 
     def execute_payment(self, request: HttpRequest, payment: OrderPayment):
@@ -179,6 +179,7 @@ class BitPay(BasePaymentProvider):
         return True
 
     def _refund(self, refund):
+        from btcpay import crypto
         payload = json.dumps({
             'token': refund.payment.info_data.get('token'),
             'amount': refund.payment.info_data.get('price'),
