@@ -4,7 +4,6 @@ import logging
 from decimal import Decimal
 
 import requests
-from btcpay import crypto
 from django.conf import settings
 from django.contrib import messages
 from django.core import signing
@@ -185,6 +184,8 @@ class ReturnView(BitPayOrderView, View):
 
 @event_permission_required('can_change_event_settings')
 def auth_start(request, **kwargs):
+    from btcpay import crypto  # improve performance at import time
+
     if request.event.settings.payment_bitpay_token:
         messages.error(request, _('You are already connected to BitPay.'))
         return redirect(reverse('control:event.settings.payment.provider', kwargs={
