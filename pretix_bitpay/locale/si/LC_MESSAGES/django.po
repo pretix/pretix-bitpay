@@ -20,7 +20,8 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 
 #: pretix_bitpay/__init__.py:10 pretix_bitpay/__init__.py:13
-#: pretix_bitpay/payment.py:32
+#: pretix_bitpay/payment.py:32 pretix_bitpay/__init__.py:8
+#: pretix_bitpay/__init__.py:11 pretix_bitpay/payment.py:30
 msgid "BitPay"
 msgstr ""
 
@@ -32,7 +33,7 @@ msgstr ""
 msgid "Crypto"
 msgstr ""
 
-#: pretix_bitpay/payment.py:54
+#: pretix_bitpay/payment.py:54 pretix_bitpay/payment.py:49
 msgid ""
 "To accept payments via BitPay, you will need an account at BitPay. By "
 "clicking on the following button, you can connect pretix to your BitPay "
@@ -40,11 +41,11 @@ msgid ""
 "refresh it after you authorized the token at BitPay."
 msgstr ""
 
-#: pretix_bitpay/payment.py:61
+#: pretix_bitpay/payment.py:61 pretix_bitpay/payment.py:56
 msgid "Connect with BitPay"
 msgstr ""
 
-#: pretix_bitpay/payment.py:66
+#: pretix_bitpay/payment.py:66 pretix_bitpay/payment.py:61
 msgid "Connect with test.bitpay.com"
 msgstr ""
 
@@ -54,15 +55,15 @@ msgid ""
 "compatible API. Enter the URL here you want to connect to."
 msgstr ""
 
-#: pretix_bitpay/payment.py:73
+#: pretix_bitpay/payment.py:73 pretix_bitpay/payment.py:68
 msgid "Start pairing"
 msgstr ""
 
-#: pretix_bitpay/payment.py:83
+#: pretix_bitpay/payment.py:83 pretix_bitpay/payment.py:78
 msgid "Disconnect from BitPay"
 msgstr ""
 
-#: pretix_bitpay/payment.py:94
+#: pretix_bitpay/payment.py:94 pretix_bitpay/payment.py:89
 msgid "API URL"
 msgstr ""
 
@@ -84,22 +85,23 @@ msgid ""
 msgstr ""
 
 #: pretix_bitpay/payment.py:171 pretix_bitpay/payment.py:215
+#: pretix_bitpay/payment.py:148 pretix_bitpay/payment.py:191
 msgid ""
 "We had trouble communicating with BitPay. Please try again and get in touch "
 "with us if this problem persists."
 msgstr ""
 
-#: pretix_bitpay/payment.py:224
+#: pretix_bitpay/payment.py:224 pretix_bitpay/payment.py:196
 msgid "BitPay reported an error: {}"
 msgstr ""
 
-#: pretix_bitpay/payment.py:231
+#: pretix_bitpay/payment.py:231 pretix_bitpay/payment.py:203
 msgid ""
 "We had trouble communicating with BitPay. Please try again and contact "
 "support if the problem persists."
 msgstr ""
 
-#: pretix_bitpay/signals.py:25
+#: pretix_bitpay/signals.py:25 pretix_bitpay/signals.py:27
 msgid "BitPay reported an event: {}"
 msgstr ""
 
@@ -165,23 +167,39 @@ msgstr ""
 msgid "Click here in order to open the window."
 msgstr ""
 
-#: pretix_bitpay/views.py:125
+#: pretix_bitpay/views.py:125 pretix_bitpay/views.py:117
 msgid "Your BitPay account has been disconnected."
 msgstr ""
 
-#: pretix_bitpay/views.py:175
+#: pretix_bitpay/views.py:175 pretix_bitpay/views.py:167
 msgid ""
 "Sorry, there was an error in the payment process. Please check the link in "
 "your emails to continue."
 msgstr ""
 
-#: pretix_bitpay/views.py:190
+#: pretix_bitpay/views.py:190 pretix_bitpay/views.py:180
 msgid "You are already connected to BitPay."
 msgstr ""
 
 #: pretix_bitpay/views.py:216 pretix_bitpay/views.py:225
+#: pretix_bitpay/views.py:207
 msgid "Communication with BitPay was not successful."
 msgstr ""
 
-#~ msgid "Bitcoin"
-#~ msgstr "බිට්කොයින්"
+#: pretix_bitpay/payment.py:31
+msgid "Bitcoin"
+msgstr "බිට්කොයින්"
+
+#: pretix_bitpay/__init__.py:14
+msgid "This plugin allows you to receive Bitcoin payments via BitPay"
+msgstr ""
+
+#: pretix_bitpay/payment.py:62
+msgid ""
+"Alternatively, you can connect with a third-party provider using a BitPay-"
+"compatible API. Enterthe URL here you want to connect to."
+msgstr ""
+
+#: pretix_bitpay/signals.py:50
+msgid "BitPay client: Private Key"
+msgstr ""
