@@ -25,12 +25,12 @@ msgid "BitPay"
 msgstr "Bitpay"
 
 #: pretix_bitpay/__init__.py:14
-msgid "This plugin allows you to receive Bitcoin payments via BitPay"
-msgstr "Bu eklenti BitPay üzerinden Bitcoin ödemeleri almanızı sağlar."
+msgid "This plugin allows you to receive Crypto payments via BitPay"
+msgstr "Bu eklenti BitPay üzerinden Crypto ödemeleri almanızı sağlar."
 
 #: pretix_bitpay/payment.py:31
-msgid "Bitcoin"
-msgstr "Bitcoin"
+msgid "Crypto"
+msgstr "Crypto"
 
 #: pretix_bitpay/payment.py:49
 msgid ""

@@ -27,7 +27,7 @@ logger = logging.getLogger(__name__)
 class BitPay(BasePaymentProvider):
     identifier = 'bitpay'
     verbose_name = _('BitPay')
-    public_name = _('Bitcoin')
+    public_name = _('Crypto')
 
     def settings_content_render(self, request):
         if not self.settings.token:
