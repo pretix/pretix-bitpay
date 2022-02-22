@@ -11,7 +11,7 @@ class BitpayApp(AppConfig):
         name = _("BitPay")
         author = "Raphael Michel"
         category = 'PAYMENT'
-        version = '1.4.1'
+        version = '1.4.2'
         description = _("This plugin allows you to receive Crypto payments " +
                         "via BitPay-compatible payment providers.")
 
