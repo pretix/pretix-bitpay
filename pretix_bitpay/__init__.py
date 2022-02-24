@@ -2,6 +2,8 @@ from django.apps import AppConfig
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 
+__version__ = "1.4.2"
+
 
 class BitpayApp(AppConfig):
     name = 'pretix_bitpay'
@@ -11,7 +13,7 @@ class BitpayApp(AppConfig):
         name = _("BitPay")
         author = "Raphael Michel"
         category = 'PAYMENT'
-        version = '1.4.1'
+        version = __version__
         description = _("This plugin allows you to receive Crypto payments " +
                         "via BitPay-compatible payment providers.")
 

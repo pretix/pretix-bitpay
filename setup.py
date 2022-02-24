@@ -4,6 +4,7 @@ from distutils.command.build import build
 from django.core import management
 from setuptools import setup, find_packages
 
+from pretix_bitpay import __version__
 
 try:
     with open(os.path.join(os.path.dirname(__file__), 'README.rst'), encoding='utf-8') as f:
@@ -25,7 +26,7 @@ cmdclass = {
 
 setup(
     name='pretix-bitpay',
-    version='1.4.1',
+    version=__version__,
     description='This plugin allows accepting crypto currency payments in pretix via BitPay-compatible payment '
                 'providers.',
     long_description=long_description,
