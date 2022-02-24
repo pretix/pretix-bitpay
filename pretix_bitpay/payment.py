@@ -14,6 +14,9 @@ from django.template.loader import get_template
 from django.urls import reverse
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _  # NoQA
+from i18nfield.forms import I18nFormField, I18nTextInput
+from i18nfield.strings import LazyI18nString
+
 from pretix.base.models import OrderPayment, OrderRefund
 from pretix.base.payment import BasePaymentProvider, PaymentException
 from pretix.multidomain.urlreverse import build_absolute_uri
@@ -27,7 +30,10 @@ logger = logging.getLogger(__name__)
 class BitPay(BasePaymentProvider):
     identifier = 'bitpay'
     verbose_name = _('BitPay')
-    public_name = _('Crypto')
+
+    @property
+    def public_name(self):
+        return str(self.settings.get('public_name', as_type=LazyI18nString) or _('Crypto'))
 
     def settings_content_render(self, request):
         if not self.settings.token:
@@ -88,8 +94,19 @@ class BitPay(BasePaymentProvider):
                      label=_('API URL'),
                      disabled=True
                  )),
+                ('public_name', I18nFormField(
+                    label=_('Payment method name'),
+                    widget=I18nTextInput,
+                    help_text=_(
+                        'Since you can accept a variety of different Crypto coins with BitPay and BitPay-compatible '
+                        'services, you can set the name of the payment method here to reflect the coins you are '
+                        'actually accepting.'
+                    )
+                )),
             ] + list(super().settings_form_fields.items())
         )
+
+        d.move_to_end('public_name', last=False)
         d.move_to_end('_enabled', last=False)
         return d
 
