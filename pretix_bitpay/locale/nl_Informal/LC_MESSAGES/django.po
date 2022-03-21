@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-06 12:38+0200\n"
+"POT-Creation-Date: 2022-03-21 15:17+0100\n"
 "PO-Revision-Date: 2019-01-02 10:58+0000\n"
 "Last-Translator: Maarten van den Berg <maartenberg1@gmail.com>\n"
 "Language-Team: Dutch (informal) <https://translate.pretix.eu/projects/pretix/"
@@ -19,20 +19,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 3.1.1\n"
 
-#: pretix_bitpay/__init__.py:8 pretix_bitpay/__init__.py:11
-#: pretix_bitpay/payment.py:30
+#: pretix_bitpay/__init__.py:10 pretix_bitpay/__init__.py:13
+#: pretix_bitpay/payment.py:32
 msgid "BitPay"
 msgstr "BitPay"
 
-#: pretix_bitpay/__init__.py:14
-msgid "This plugin allows you to receive Crypto payments via BitPay"
-msgstr "Deze plug-in staat je toe om Crypto-betalingen te ontvangen via BitPay"
+#: pretix_bitpay/__init__.py:17
+msgid "Receive Crypto payments via BitPay-compatible payment providers."
+msgstr ""
 
-#: pretix_bitpay/payment.py:31
+#: pretix_bitpay/payment.py:36
 msgid "Crypto"
 msgstr "Crypto"
 
-#: pretix_bitpay/payment.py:49
+#: pretix_bitpay/payment.py:54
 msgid ""
 "To accept payments via BitPay, you will need an account at BitPay. By "
 "clicking on the following button, you can connect pretix to your BitPay "
@@ -45,35 +45,56 @@ msgstr ""
 "deze pagina en ververs de pagina nadat je het token heeft goedgekeurd bij "
 "BitPay."
 
-#: pretix_bitpay/payment.py:56
+#: pretix_bitpay/payment.py:61
 msgid "Connect with BitPay"
 msgstr "Verbinden met BitPay"
 
-#: pretix_bitpay/payment.py:61
+#: pretix_bitpay/payment.py:66
 msgid "Connect with test.bitpay.com"
 msgstr "Verbinden met test.bitpay.com"
 
-#: pretix_bitpay/payment.py:62
+#: pretix_bitpay/payment.py:67
+#, fuzzy
+#| msgid ""
+#| "Alternatively, you can connect with a third-party provider using a BitPay-"
+#| "compatible API. Enterthe URL here you want to connect to."
 msgid ""
 "Alternatively, you can connect with a third-party provider using a BitPay-"
-"compatible API. Enterthe URL here you want to connect to."
+"compatible API. Enter the URL here you want to connect to."
 msgstr ""
 "Je kan ook verbinden met een andere betalingsprovider met een BitPay-"
 "compatibele API. Voer de URL waar je mee wilt verbinden in."
 
-#: pretix_bitpay/payment.py:68
+#: pretix_bitpay/payment.py:73
 msgid "Start pairing"
 msgstr "Begin koppelen"
 
-#: pretix_bitpay/payment.py:78
+#: pretix_bitpay/payment.py:83
 msgid "Disconnect from BitPay"
 msgstr "Verbinding met BitPay verbreken"
 
-#: pretix_bitpay/payment.py:89
+#: pretix_bitpay/payment.py:94
 msgid "API URL"
 msgstr "API-URL"
 
-#: pretix_bitpay/payment.py:148 pretix_bitpay/payment.py:191
+#: pretix_bitpay/payment.py:98
+msgid "Payment method name"
+msgstr ""
+
+#: pretix_bitpay/payment.py:101
+msgid ""
+"Since you can accept a variety of different Crypto coins with BitPay and "
+"BitPay-compatible services, you can set the name of the payment method here "
+"to reflect the coins you are actually accepting."
+msgstr ""
+
+#: pretix_bitpay/payment.py:142
+msgid ""
+"The BitPay plugin is operating in test mode. No money will actually be "
+"transferred."
+msgstr ""
+
+#: pretix_bitpay/payment.py:171 pretix_bitpay/payment.py:215
 msgid ""
 "We had trouble communicating with BitPay. Please try again and get in touch "
 "with us if this problem persists."
@@ -81,11 +102,11 @@ msgstr ""
 "We hadden moeite met het communiceren met BitPay. Probeer het opnieuw, en "
 "neem contact met ons op als dit probleem aanhoudt."
 
-#: pretix_bitpay/payment.py:196
+#: pretix_bitpay/payment.py:224
 msgid "BitPay reported an error: {}"
 msgstr "BitPay meldde een fout: {}"
 
-#: pretix_bitpay/payment.py:203
+#: pretix_bitpay/payment.py:231
 msgid ""
 "We had trouble communicating with BitPay. Please try again and contact "
 "support if the problem persists."
@@ -93,13 +114,9 @@ msgstr ""
 "We hadden moeite met het communiceren met BitPay. Probeer het opnieuw, en "
 "neem contact met ons op als dit probleem aanhoudt."
 
-#: pretix_bitpay/signals.py:27
+#: pretix_bitpay/signals.py:25
 msgid "BitPay reported an event: {}"
 msgstr "BitPay meldde een gebeurtenis: {}"
-
-#: pretix_bitpay/signals.py:50
-msgid "BitPay client: Private Key"
-msgstr "BitPay-client: Privésleutel"
 
 #: pretix_bitpay/templates/pretix_bitpay/action_overpaid.html:5
 #, python-format
@@ -178,11 +195,11 @@ msgstr "Is het venster om je betaling uit te voeren niet geopend?"
 msgid "Click here in order to open the window."
 msgstr "Klik hier om het venster te openen."
 
-#: pretix_bitpay/views.py:117
+#: pretix_bitpay/views.py:125
 msgid "Your BitPay account has been disconnected."
 msgstr "De verbinding met je BitPay-account is verbroken."
 
-#: pretix_bitpay/views.py:167
+#: pretix_bitpay/views.py:175
 msgid ""
 "Sorry, there was an error in the payment process. Please check the link in "
 "your emails to continue."
@@ -190,10 +207,17 @@ msgstr ""
 "Sorry, er is iets misgegaan in het betalingsproces. Klik op de link in je "
 "email om door te gaan."
 
-#: pretix_bitpay/views.py:180
+#: pretix_bitpay/views.py:190
 msgid "You are already connected to BitPay."
 msgstr "Je bent al verbonden met BitPay."
 
-#: pretix_bitpay/views.py:207 pretix_bitpay/views.py:216
+#: pretix_bitpay/views.py:216 pretix_bitpay/views.py:225
 msgid "Communication with BitPay was not successful."
 msgstr "Communiceren met BitPay is niet gelukt."
+
+#~ msgid "This plugin allows you to receive Crypto payments via BitPay"
+#~ msgstr ""
+#~ "Deze plug-in staat je toe om Crypto-betalingen te ontvangen via BitPay"
+
+#~ msgid "BitPay client: Private Key"
+#~ msgstr "BitPay-client: Privésleutel"
