@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-03-21 15:17+0100\n"
-"PO-Revision-Date: 2018-10-31 14:25+0000\n"
+"PO-Revision-Date: 2022-03-21 14:19+0000\n"
 "Last-Translator: Raphael Michel <michel@rami.io>\n"
 "Language-Team: German (informal) <https://translate.pretix.eu/projects/"
 "pretix/pretix-plugin-bitpay/de_Informal/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.1.1\n"
+"X-Generator: Weblate 4.11.2\n"
 
 #: pretix_bitpay/__init__.py:10 pretix_bitpay/__init__.py:13
 #: pretix_bitpay/payment.py:32
@@ -22,6 +22,7 @@ msgstr "BitPay"
 #: pretix_bitpay/__init__.py:17
 msgid "Receive Crypto payments via BitPay-compatible payment providers."
 msgstr ""
+"Akzeptiere Crypto-Zahlungen über BitPay-kompatibe Zahlungsdienstleister."
 
 #: pretix_bitpay/payment.py:36
 msgid "Crypto"
@@ -74,7 +75,7 @@ msgstr "API-URL"
 
 #: pretix_bitpay/payment.py:98
 msgid "Payment method name"
-msgstr ""
+msgstr "Name der Zahlungsmethode"
 
 #: pretix_bitpay/payment.py:101
 msgid ""
@@ -82,12 +83,17 @@ msgid ""
 "BitPay-compatible services, you can set the name of the payment method here "
 "to reflect the coins you are actually accepting."
 msgstr ""
+"Da mit BitPay und BitPay-kompatiblen Zahlungsdiensten verschiedene Crypto-"
+"Coins akzeptiert werden können, kann der Name der Zahlungsart im Checkout "
+"hier angepasst werden."
 
 #: pretix_bitpay/payment.py:142
 msgid ""
 "The BitPay plugin is operating in test mode. No money will actually be "
 "transferred."
 msgstr ""
+"Das BitPay-Plugin arbeitet im Testmodus. Es wird kein echtes Geld "
+"transferiert."
 
 #: pretix_bitpay/payment.py:171 pretix_bitpay/payment.py:215
 msgid ""
