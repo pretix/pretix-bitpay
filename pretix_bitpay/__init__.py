@@ -14,8 +14,8 @@ class BitpayApp(AppConfig):
         author = "Raphael Michel"
         category = 'PAYMENT'
         version = __version__
-        description = _("This plugin allows you to receive Crypto payments " +
-                        "via BitPay-compatible payment providers.")
+        description = _("Receive Crypto payments via BitPay-compatible payment providers.")
+        picture = "pretix_bitpay/bitpay-logo.svg"
 
     def ready(self):
         from . import signals   # NOQA
