@@ -16,11 +16,11 @@ from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _  # NoQA
 from i18nfield.forms import I18nFormField, I18nTextInput
 from i18nfield.strings import LazyI18nString
+from requests import RequestException
 
 from pretix.base.models import OrderPayment, OrderRefund
 from pretix.base.payment import BasePaymentProvider, PaymentException
 from pretix.multidomain.urlreverse import build_absolute_uri
-from requests import HTTPError
 
 from .models import ReferencedBitPayObject
 
@@ -166,7 +166,7 @@ class BitPay(BasePaymentProvider):
                 # "buyer": {"email": "test@customer.com"},
                 "token": self.settings.token
             })
-        except HTTPError:
+        except RequestException:
             logger.exception('Failure during bitpay payment.')
             raise PaymentException(_('We had trouble communicating with BitPay. Please try again and get in touch '
                                      'with us if this problem persists.'))
