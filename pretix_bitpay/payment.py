@@ -1,12 +1,11 @@
+from typing import Union
+
 import hashlib
 import json
 import logging
+import requests
 import urllib
 from collections import OrderedDict
-from json import JSONDecodeError
-from typing import Union
-
-import requests
 from django import forms
 from django.core import signing
 from django.http import HttpRequest
@@ -16,11 +15,11 @@ from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _  # NoQA
 from i18nfield.forms import I18nFormField, I18nTextInput
 from i18nfield.strings import LazyI18nString
-from requests import RequestException
-
+from json import JSONDecodeError
 from pretix.base.models import OrderPayment, OrderRefund
 from pretix.base.payment import BasePaymentProvider, PaymentException
 from pretix.multidomain.urlreverse import build_absolute_uri
+from requests import RequestException
 
 from .models import ReferencedBitPayObject
 
