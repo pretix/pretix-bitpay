@@ -2,7 +2,7 @@ from django.apps import AppConfig
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 
-__version__ = "1.4.2"
+__version__ = "1.4.3"
 
 
 class BitpayApp(AppConfig):
