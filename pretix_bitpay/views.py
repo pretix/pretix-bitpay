@@ -1,6 +1,7 @@
 import hashlib
 import json
 import logging
+import urllib.parse
 from decimal import Decimal
 
 import requests
