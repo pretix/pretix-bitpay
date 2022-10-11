@@ -22,7 +22,7 @@ from django.views.decorators.http import require_POST
 from pretix.base.models import Order, Quota, OrderPayment
 from pretix.base.services.locking import LockTimeoutException
 from pretix.control.permissions import event_permission_required
-from pretix.multidomain.urlreverse import eventreverse
+from pretix.multidomain.urlreverse import eventreverse, build_absolute_uri
 from .models import ReferencedBitPayObject
 from .payment import BitPay
 
@@ -31,17 +31,24 @@ logger = logging.getLogger(__name__)
 
 @xframe_options_exempt
 def redirect_view(request, *args, **kwargs):
-    signer = signing.Signer(salt='safe-redirect')
     try:
-        url = signer.unsign(request.GET.get('url', ''))
+        data = signing.loads(request.GET.get('data', ''), salt='safe-redirect')
     except signing.BadSignature:
         return HttpResponseBadRequest('Invalid parameter')
 
-    r = render(request, 'pretix_bitpay/redirect.html', {
-        'url': url,
-    })
-    r._csp_ignore = True
-    return r
+    if 'go' in request.GET:
+        if 'session' in data:
+            for k, v in data['session'].items():
+                request.session[k] = v
+        return redirect(data['url'])
+    else:
+        params = request.GET.copy()
+        params['go'] = '1'
+        r = render(request, 'pretix_bitpay/redirect.html', {
+            'url': build_absolute_uri(request.event, 'plugins:pretix_bitpay:redirect') + '?' + urllib.parse.urlencode(params),
+        })
+        r._csp_ignore = True
+        return r
 
 
 @csrf_exempt
