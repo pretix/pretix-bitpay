@@ -1,7 +1,7 @@
 from django.urls import include, path, re_path
-
 from pretix.multidomain import event_url
-from .views import auth_start, auth_disconnect, webhook, ReturnView, redirect_view
+
+from .views import ReturnView, auth_disconnect, auth_start, redirect_view, webhook
 
 event_patterns = [
     path('bitpay/', include([

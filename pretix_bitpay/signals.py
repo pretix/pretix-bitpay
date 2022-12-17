@@ -1,12 +1,12 @@
 import json
-
 from django.dispatch import receiver
 from django.template.loader import get_template
 from django.utils.translation import gettext_lazy as _
-
 from pretix.base.signals import (
     logentry_display,
-    register_payment_providers, requiredaction_display, )
+    register_payment_providers,
+    requiredaction_display,
+)
 
 
 @receiver(register_payment_providers, dispatch_uid="payment_bitpay")

@@ -1,16 +1,15 @@
 import hashlib
 import json
 import logging
+import requests
 import urllib.parse
 from decimal import Decimal
-
-import requests
 from django.conf import settings
 from django.contrib import messages
 from django.core import signing
 from django.db import transaction
 from django.http import Http404, HttpResponse, HttpResponseBadRequest
-from django.shortcuts import redirect, render, get_object_or_404
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 from django.utils.decorators import method_decorator
 from django.utils.functional import cached_property
@@ -19,11 +18,11 @@ from django.views import View
 from django.views.decorators.clickjacking import xframe_options_exempt
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
-
-from pretix.base.models import Order, Quota, OrderPayment
+from pretix.base.models import Order, OrderPayment, Quota
 from pretix.base.services.locking import LockTimeoutException
 from pretix.control.permissions import event_permission_required
-from pretix.multidomain.urlreverse import eventreverse, build_absolute_uri
+from pretix.multidomain.urlreverse import build_absolute_uri, eventreverse
+
 from .models import ReferencedBitPayObject
 from .payment import BitPay
 
