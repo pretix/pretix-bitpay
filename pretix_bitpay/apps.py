@@ -3,7 +3,6 @@ from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 
 from . import __version__
-        compatibility = "pretix>=4.16.0"
 
 
 class BitpayApp(AppConfig):
