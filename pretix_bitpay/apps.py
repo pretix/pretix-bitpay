@@ -3,6 +3,7 @@ from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 
 from . import __version__
+        compatibility = "pretix>=4.16.0"
 
 
 class BitpayApp(AppConfig):
@@ -14,6 +15,7 @@ class BitpayApp(AppConfig):
         author = "Raphael Michel"
         category = 'PAYMENT'
         version = __version__
+        compatibility = "pretix>=4.16.0"
         description = _("Receive Crypto payments via BitPay-compatible payment providers.")
         picture = "pretix_bitpay/bitpay-logo.svg"
 
