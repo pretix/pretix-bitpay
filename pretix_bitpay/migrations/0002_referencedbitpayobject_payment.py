@@ -7,7 +7,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('pretixbase', '0097_auto_20180722_0804'),
         ('pretix_bitpay', '0001_initial'),
