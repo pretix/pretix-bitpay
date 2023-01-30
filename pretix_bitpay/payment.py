@@ -4,7 +4,6 @@ import hashlib
 import json
 import logging
 import requests
-import urllib
 from collections import OrderedDict
 from django import forms
 from django.core import signing
