@@ -4,7 +4,7 @@ style:
         - virtualenv ../env
         - source ../env/bin/activate
         - XDG_CACHE_HOME=/cache pip3 install -U pip wheel setuptools isort docformatter black flake8 check-manifest
-        - XDG_CACHE_HOME=/cache pip3 install -U "git+https://github.com/pretix/pretix.git@master#egg=pretix&subdirectory=src"
+        - XDG_CACHE_HOME=/cache pip3 install -U "git+https://github.com/pretix/pretix.git@master#egg=pretix"
         - python setup.py develop
         - black --check .
         - isort -c .
