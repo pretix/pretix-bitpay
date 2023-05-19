@@ -19,7 +19,8 @@ pypi:
         - source /tmp/env/bin/activate
         - XDG_CACHE_HOME=/cache pip3 install -U pip wheel setuptools twine build pretix-plugin-build
         - python -m build
-        - check-manifest .twine check dist/*
+        - check-manifest .
+        - twine check dist/*
         - twine upload dist/*
     tags:
         - python3
