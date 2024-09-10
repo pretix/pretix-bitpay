@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-03-21 15:17+0100\n"
-"PO-Revision-Date: 2022-03-21 14:19+0000\n"
+"PO-Revision-Date: 2024-09-10 07:22+0000\n"
 "Last-Translator: Raphael Michel <michel@rami.io>\n"
 "Language-Team: German <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-bitpay/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.11.2\n"
+"X-Generator: Weblate 5.7\n"
 
 #: pretix_bitpay/__init__.py:10 pretix_bitpay/__init__.py:13
 #: pretix_bitpay/payment.py:32
@@ -50,10 +50,6 @@ msgid "Connect with test.bitpay.com"
 msgstr "Mit test.bitpay.com verknüpfen"
 
 #: pretix_bitpay/payment.py:67
-#, fuzzy
-#| msgid ""
-#| "Alternatively, you can connect with a third-party provider using a BitPay-"
-#| "compatible API. Enterthe URL here you want to connect to."
 msgid ""
 "Alternatively, you can connect with a third-party provider using a BitPay-"
 "compatible API. Enter the URL here you want to connect to."
