@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-03-21 15:17+0100\n"
-"PO-Revision-Date: 2024-12-27 04:00+0000\n"
+"PO-Revision-Date: 2025-07-22 14:00+0000\n"
 "Last-Translator: Hijiri Umemoto <hijiri@umemoto.org>\n"
 "Language-Team: Japanese <https://translate.pretix.eu/projects/pretix/"
 "pretix-plugin-bitpay/ja/>\n"
@@ -17,17 +17,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.9.2\n"
+"X-Generator: Weblate 5.12.2\n"
 
 #: pretix_bitpay/__init__.py:10 pretix_bitpay/__init__.py:13
 #: pretix_bitpay/payment.py:32
-#, fuzzy
 msgid "BitPay"
 msgstr "BitPay"
 
 #: pretix_bitpay/__init__.py:17
 msgid "Receive Crypto payments via BitPay-compatible payment providers."
-msgstr ""
+msgstr "BitPay互換の決済プロバイダーを通じて暗号決済を受け取る。"
 
 #: pretix_bitpay/payment.py:36
 msgid "Crypto"
