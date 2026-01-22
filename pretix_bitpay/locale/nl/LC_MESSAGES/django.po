@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: Dutch (pretix)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-03-21 15:17+0100\n"
-"PO-Revision-Date: 2025-03-11 23:00+0000\n"
-"Last-Translator: MaartenUreel <maarten@ureel.be>\n"
-"Language-Team: Dutch <https://translate.pretix.eu/projects/pretix/"
-"pretix-plugin-bitpay/nl/>\n"
+"PO-Revision-Date: 2026-01-22 19:00+0000\n"
+"Last-Translator: Ruud Hendrickx <ruud@leckxicon.eu>\n"
+"Language-Team: Dutch <https://translate.pretix.eu/projects/pretix/pretix-"
+"plugin-bitpay/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #: pretix_bitpay/__init__.py:10 pretix_bitpay/__init__.py:13
 #: pretix_bitpay/payment.py:32
@@ -144,9 +144,9 @@ msgid ""
 "complete your payment. You will then be redirected back here to get your "
 "tickets."
 msgstr ""
-"Nadat u uw bestelling heeft ingediend zullen we u naar een betalingspartner "
-"doorverwijzen om uw betaling uit te voeren. U zal hierna naar hier worden "
-"teruggestuurd om uw tickets te krijgen."
+"Nadat u uw bestelling heeft ingediend, verwijzen we u door naar een "
+"betalingspartner om uw betaling uit te voeren. Daarna komt u terug naar hier "
+"om uw tickets te krijgen."
 
 #: pretix_bitpay/templates/pretix_bitpay/control.html:6
 msgid "Invoice ID"
@@ -184,7 +184,8 @@ msgstr "Het betalingsproces is begonnen in een nieuw venster."
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:20
 msgid "The window to enter your payment data was not opened or was closed?"
-msgstr "Is het venster om uw betaling uit te voeren niet geopend?"
+msgstr ""
+"Het venster om uw betaling in te voeren is niet geopend of was gesloten?"
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:24
 msgid "Click here in order to open the window."
@@ -199,8 +200,8 @@ msgid ""
 "Sorry, there was an error in the payment process. Please check the link in "
 "your emails to continue."
 msgstr ""
-"Sorry, er trad een fout op in het betalingsproces. Klik op de link in uw "
-"email om door te gaan."
+"Sorry, er heeft zich een fout voorgedaan in het betalingsproces. Klik op de "
+"link in uw e-mails om door te gaan."
 
 #: pretix_bitpay/views.py:190
 msgid "You are already connected to BitPay."
