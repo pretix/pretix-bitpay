@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Dutch (pretix)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-03-21 15:17+0100\n"
-"PO-Revision-Date: 2026-01-22 19:00+0000\n"
+"PO-Revision-Date: 2026-01-26 01:00+0000\n"
 "Last-Translator: Ruud Hendrickx <ruud@leckxicon.eu>\n"
 "Language-Team: Dutch <https://translate.pretix.eu/projects/pretix/pretix-"
 "plugin-bitpay/nl/>\n"
@@ -74,7 +74,7 @@ msgstr "API-URL"
 
 #: pretix_bitpay/payment.py:98
 msgid "Payment method name"
-msgstr ""
+msgstr "Naam van betaalmethode"
 
 #: pretix_bitpay/payment.py:101
 msgid ""
