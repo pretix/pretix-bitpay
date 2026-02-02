@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Dutch (pretix)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-03-21 15:17+0100\n"
-"PO-Revision-Date: 2026-01-28 01:00+0000\n"
+"PO-Revision-Date: 2026-02-02 20:00+0000\n"
 "Last-Translator: Ruud Hendrickx <ruud@leckxicon.eu>\n"
 "Language-Team: Dutch <https://translate.pretix.eu/projects/pretix/pretix-"
 "plugin-bitpay/nl/>\n"
@@ -34,10 +34,10 @@ msgid ""
 "account. A BitPay site will open in a new tab. Return to this page and "
 "refresh it after you authorized the token at BitPay."
 msgstr ""
-"Om betalingen via BitPay te accepteren heeft u een account bij BitPay nodig. "
+"Om betalingen via BitPay te accepteren hebt u een account bij BitPay nodig. "
 "U kunt pretix aan uw BitPay-account koppelen door op de volgende knop te "
 "klikken. De site van BitPay zal in een nieuw tabblad openen. Keer terug naar "
-"deze pagina en ververs de pagina nadat u het token heeft goedgekeurd bij "
+"deze pagina en ververs de pagina nadat u het token hebt goedgekeurd bij "
 "BitPay."
 
 #: pretix_bitpay/payment.py:61
@@ -70,7 +70,7 @@ msgstr "API-URL"
 
 #: pretix_bitpay/payment.py:98
 msgid "Payment method name"
-msgstr "Naam van betaalmethode"
+msgstr "Naam betaalmethode"
 
 #: pretix_bitpay/payment.py:101
 msgid ""
@@ -96,24 +96,24 @@ msgid ""
 "We had trouble communicating with BitPay. Please try again and get in touch "
 "with us if this problem persists."
 msgstr ""
-"We hadden moeite met het communiceren met BitPay. Probeer het opnieuw, en "
+"We hadden problemen met het communiceren met BitPay. Probeer het opnieuw, en "
 "neem contact met ons op als dit probleem aanhoudt."
 
 #: pretix_bitpay/payment.py:224
 msgid "BitPay reported an error: {}"
-msgstr "BitPay meldde een fout: {}"
+msgstr "BitPay heeft een fout gemeld: {}"
 
 #: pretix_bitpay/payment.py:231
 msgid ""
 "We had trouble communicating with BitPay. Please try again and contact "
 "support if the problem persists."
 msgstr ""
-"We hadden moeite met het communiceren met BitPay. Probeer het opnieuw, en "
-"neem contact met ons op als dit probleem aanhoudt."
+"We hadden problemen met de communicatie met BitPay. Probeer het opnieuw en "
+"neem contact op met de ondersteuning als het probleem zich blijft voordoen."
 
 #: pretix_bitpay/signals.py:25
 msgid "BitPay reported an event: {}"
-msgstr "BitPay meldde een gebeurtenis: {}"
+msgstr "BitPay heeft een gebeurtenis gemeld: {}"
 
 #: pretix_bitpay/templates/pretix_bitpay/action_overpaid.html:5
 #, python-format
@@ -124,9 +124,9 @@ msgid ""
 "refund the money via BitPay's interface."
 msgstr ""
 "De BitPay-factuur <a %(bp_href)s>%(charge)s</a> is gelukt, maar de "
-"bestelling %(order)s is verlopen, en het product is ondertussen uitverkocht. "
-"Hierom kon de betaling niet worden geaccepteerd. Neem contact op met de "
-"gebruiker, en betaal het geld terug via de interface van BitPay."
+"bestelling %(order)s is verlopen en het product is ondertussen uitverkocht. "
+"Daarom kon de betaling niet worden geaccepteerd. Neem contact op met de "
+"gebruiker en betaal het geld terug via de interface van BitPay."
 
 #: pretix_bitpay/templates/pretix_bitpay/action_refund.html:5
 #, python-format
@@ -135,9 +135,9 @@ msgid ""
 "failed or refunded. Do you want to mark the matching order (%(order)s) as "
 "refunded?"
 msgstr ""
-"BitPay meldde dat de factuur <a %(bp_href)s>%(charge)s</a> is mislukt of "
-"terugbetaald. Wilt u de bijbehorende bestelling (%(order)s) als terugbetaald "
-"aanmerken?"
+"BitPay meldt dat de factuur <a %(bp_href)s>%(charge)s</a> mislukt of "
+"terugbetaald is. Wilt u de bijbehorende bestelling (%(order)s) als "
+"terugbetaald aanmerken?"
 
 #: pretix_bitpay/templates/pretix_bitpay/checkout_payment_confirm.html:3
 #: pretix_bitpay/templates/pretix_bitpay/checkout_payment_form.html:2
@@ -146,7 +146,7 @@ msgid ""
 "complete your payment. You will then be redirected back here to get your "
 "tickets."
 msgstr ""
-"Nadat u uw bestelling heeft ingediend, verwijzen we u door naar een "
+"Nadat u uw bestelling hebt ingediend, verwijzen we u door naar een "
 "betalingspartner om uw betaling uit te voeren. Daarna komt u terug naar hier "
 "om uw tickets te krijgen."
 
@@ -187,8 +187,8 @@ msgstr "Het betalingsproces is begonnen in een nieuw venster."
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:20
 msgid "The window to enter your payment data was not opened or was closed?"
 msgstr ""
-"Het venster voor het invoeren van uw betalingsgegevens werd niet geopend of "
-"werd gesloten?"
+"Het venster voor het invoeren van uw betalingsgegevens was niet open of werd "
+"gesloten?"
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:24
 msgid "Click here in order to open the window."
@@ -212,7 +212,7 @@ msgstr "U bent al verbonden met BitPay."
 
 #: pretix_bitpay/views.py:216 pretix_bitpay/views.py:225
 msgid "Communication with BitPay was not successful."
-msgstr "Communiceren met BitPay is niet gelukt."
+msgstr "Communicatie met BitPay is niet gelukt."
 
 #~ msgid "This plugin allows you to receive Crypto payments via BitPay"
 #~ msgstr ""
