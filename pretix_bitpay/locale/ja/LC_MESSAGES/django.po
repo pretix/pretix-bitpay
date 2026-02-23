@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-03-21 15:17+0100\n"
-"PO-Revision-Date: 2025-09-26 15:00+0000\n"
-"Last-Translator: Yasunobu YesNo Kawaguchi <kawaguti@gmail.com>\n"
-"Language-Team: Japanese <https://translate.pretix.eu/projects/pretix/"
-"pretix-plugin-bitpay/ja/>\n"
+"PO-Revision-Date: 2026-02-23 10:00+0000\n"
+"Last-Translator: Hijiri Umemoto <hijiri@umemoto.org>\n"
+"Language-Team: Japanese <https://translate.pretix.eu/projects/pretix/pretix-"
+"plugin-bitpay/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.13.3\n"
+"X-Generator: Weblate 5.16\n"
 
 #: pretix_bitpay/__init__.py:10 pretix_bitpay/__init__.py:13
 #: pretix_bitpay/payment.py:32
@@ -73,7 +73,7 @@ msgstr "API URL"
 
 #: pretix_bitpay/payment.py:98
 msgid "Payment method name"
-msgstr ""
+msgstr "支払い方法の名称"
 
 #: pretix_bitpay/payment.py:101
 msgid ""
@@ -154,11 +154,11 @@ msgstr "請求書ID"
 
 #: pretix_bitpay/templates/pretix_bitpay/control.html:8
 msgid "Status"
-msgstr ""
+msgstr "ステータス"
 
 #: pretix_bitpay/templates/pretix_bitpay/control.html:14
 msgid "Error message"
-msgstr ""
+msgstr "エラーメッセージ"
 
 #: pretix_bitpay/templates/pretix_bitpay/control_refund.html:5
 msgid ""
@@ -179,15 +179,15 @@ msgstr "お客様の決済について、決済プロバイダーからの回答
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:17
 msgid "The payment process has started in a new window."
-msgstr ""
+msgstr "新規ウィンドウで、支払いの処理が開始しました。"
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:20
 msgid "The window to enter your payment data was not opened or was closed?"
-msgstr ""
+msgstr "支払い情報を入力するウィンドウが開かれてないか、閉じられている?"
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:24
 msgid "Click here in order to open the window."
-msgstr ""
+msgstr "ウィンドウを開くには、ここをクリック。"
 
 #: pretix_bitpay/views.py:125
 msgid "Your BitPay account has been disconnected."
@@ -198,6 +198,8 @@ msgid ""
 "Sorry, there was an error in the payment process. Please check the link in "
 "your emails to continue."
 msgstr ""
+"申し訳ありません。支払いの処理でエラーが発生しました。続行するには、メール内"
+"のリンクをご確認ください。"
 
 #: pretix_bitpay/views.py:190
 msgid "You are already connected to BitPay."
