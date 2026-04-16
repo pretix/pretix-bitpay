@@ -8,26 +8,29 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-03-21 15:17+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-04-16 22:00+0000\n"
+"Last-Translator: Nikolai <nikolai@lengefeldt.de>\n"
+"Language-Team: Danish <https://translate.pretix.eu/projects/pretix/pretix-"
+"plugin-bitpay/da/>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.17\n"
 
 #: pretix_bitpay/__init__.py:10 pretix_bitpay/__init__.py:13
 #: pretix_bitpay/payment.py:32
 msgid "BitPay"
-msgstr ""
+msgstr "BitPay"
 
 #: pretix_bitpay/__init__.py:17
 msgid "Receive Crypto payments via BitPay-compatible payment providers."
-msgstr ""
+msgstr "Modtag kryptobetalinger via BitPay-kompatible betalingsudbydere."
 
 #: pretix_bitpay/payment.py:36
 msgid "Crypto"
-msgstr ""
+msgstr "Krypto"
 
 #: pretix_bitpay/payment.py:54
 msgid ""
@@ -36,36 +39,42 @@ msgid ""
 "account. A BitPay site will open in a new tab. Return to this page and "
 "refresh it after you authorized the token at BitPay."
 msgstr ""
+"For at kunne modtage betalinger via BitPay skal du have en konto hos BitPay. "
+"Ved at klikke på knappen nedenfor kan du forbinde pretix med din BitPay-"
+"konto. En BitPay-side åbnes i et nyt faneblad. Gå tilbage til denne side og "
+"opdater den, når du har godkendt tokenet på BitPay."
 
 #: pretix_bitpay/payment.py:61
 msgid "Connect with BitPay"
-msgstr ""
+msgstr "Opret forbindelse til BitPay"
 
 #: pretix_bitpay/payment.py:66
 msgid "Connect with test.bitpay.com"
-msgstr ""
+msgstr "Opret forbindelse til test.bitpay.com"
 
 #: pretix_bitpay/payment.py:67
 msgid ""
 "Alternatively, you can connect with a third-party provider using a BitPay-"
 "compatible API. Enter the URL here you want to connect to."
 msgstr ""
+"Du kan også oprette forbindelse til en tredjepartsudbyder ved hjælp af et "
+"BitPay-kompatibelt API. Indtast den URL, du vil oprette forbindelse til, her."
 
 #: pretix_bitpay/payment.py:73
 msgid "Start pairing"
-msgstr ""
+msgstr "Start parring"
 
 #: pretix_bitpay/payment.py:83
 msgid "Disconnect from BitPay"
-msgstr ""
+msgstr "Afmeld BitPay"
 
 #: pretix_bitpay/payment.py:94
 msgid "API URL"
-msgstr ""
+msgstr "API-URL"
 
 #: pretix_bitpay/payment.py:98
 msgid "Payment method name"
-msgstr ""
+msgstr "Navn på betalingsmetode"
 
 #: pretix_bitpay/payment.py:101
 msgid ""
@@ -73,32 +82,39 @@ msgid ""
 "BitPay-compatible services, you can set the name of the payment method here "
 "to reflect the coins you are actually accepting."
 msgstr ""
+"Da du kan modtage en række forskellige kryptovalutaer via BitPay og BitPay-"
+"kompatible tjenester, kan du her angive navnet på betalingsmetoden, så det "
+"afspejler de kryptovalutaer, du rent faktisk modtager."
 
 #: pretix_bitpay/payment.py:142
 msgid ""
 "The BitPay plugin is operating in test mode. No money will actually be "
 "transferred."
-msgstr ""
+msgstr "BitPay-pluginet kører i testtilstand. Der overføres ikke reelle penge."
 
 #: pretix_bitpay/payment.py:171 pretix_bitpay/payment.py:215
 msgid ""
 "We had trouble communicating with BitPay. Please try again and get in touch "
 "with us if this problem persists."
 msgstr ""
+"Vi havde problemer med at kommunikere med BitPay. Prøv venligst igen, og "
+"kontakt os, hvis problemet fortsætter."
 
 #: pretix_bitpay/payment.py:224
 msgid "BitPay reported an error: {}"
-msgstr ""
+msgstr "BitPay meldte en fejl: {}"
 
 #: pretix_bitpay/payment.py:231
 msgid ""
 "We had trouble communicating with BitPay. Please try again and contact "
 "support if the problem persists."
 msgstr ""
+"Vi havde problemer med at kommunikere med BitPay. Prøv venligst igen, og "
+"kontakt supporten, hvis problemet fortsætter."
 
 #: pretix_bitpay/signals.py:25
 msgid "BitPay reported an event: {}"
-msgstr ""
+msgstr "BitPay har rapporteret en hændelse: {}"
 
 #: pretix_bitpay/templates/pretix_bitpay/action_overpaid.html:5
 #, python-format
@@ -108,6 +124,10 @@ msgid ""
 "Therefore, the payment could not be accepted. Please contact the user and "
 "refund the money via BitPay's interface."
 msgstr ""
+"BitPay-fakturaen <a %(bp_href)s>%(charge)s</a> er blevet oprettet, men "
+"ordren %(order)s er udløbet, og varen er i mellemtiden udsolgt. Derfor kunne "
+"betalingen ikke godkendes. Kontakt venligst brugeren og tilbagebetal beløbet "
+"via BitPays brugergrænseflade."
 
 #: pretix_bitpay/templates/pretix_bitpay/action_refund.html:5
 #, python-format
@@ -116,6 +136,9 @@ msgid ""
 "failed or refunded. Do you want to mark the matching order (%(order)s) as "
 "refunded?"
 msgstr ""
+"BitPay har meddelt, at fakturaen <a %(bp_href)s>%(charge)s</a> er blevet "
+"afvist eller refunderet. Vil du markere den tilhørende ordre (%(order)s) som "
+"refunderet?"
 
 #: pretix_bitpay/templates/pretix_bitpay/checkout_payment_confirm.html:3
 #: pretix_bitpay/templates/pretix_bitpay/checkout_payment_form.html:2
@@ -124,18 +147,21 @@ msgid ""
 "complete your payment. You will then be redirected back here to get your "
 "tickets."
 msgstr ""
+"Når du har afgivet din bestilling, omdirigerer vi dig til en "
+"betalingspartner, hvor du kan gennemføre betalingen. Derefter bliver du "
+"omdirigeret tilbage hertil, hvor du kan hente dine billetter."
 
 #: pretix_bitpay/templates/pretix_bitpay/control.html:6
 msgid "Invoice ID"
-msgstr ""
+msgstr "Faktura-ID"
 
 #: pretix_bitpay/templates/pretix_bitpay/control.html:8
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: pretix_bitpay/templates/pretix_bitpay/control.html:14
 msgid "Error message"
-msgstr ""
+msgstr "Fejlmeddelelse"
 
 #: pretix_bitpay/templates/pretix_bitpay/control_refund.html:5
 msgid ""
@@ -143,39 +169,48 @@ msgid ""
 "email with instructions on how to retrieve the refund. pretix, however, will "
 "mark the ticket as refunded immediately."
 msgstr ""
+"Bemærk, at BitPay opretter en \"refusionsanmodning\", og brugeren modtager "
+"en e-mail med instruktioner om, hvordan refusionen hentes. pretix markerer "
+"derimod billetten som refunderet med det samme."
 
 #: pretix_bitpay/templates/pretix_bitpay/pending.html:3
 msgid ""
 "We're waiting for an answer from the payment provider regarding your "
 "payment. Please contact us if this takes more than a few hours."
 msgstr ""
+"Vi afventer et svar fra betalingsudbyderen vedrørende din betaling. Kontakt "
+"os venligst, hvis det tager længere tid end et par timer."
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:17
 msgid "The payment process has started in a new window."
-msgstr ""
+msgstr "Betalingsprocessen er startet i et nyt vindue."
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:20
 msgid "The window to enter your payment data was not opened or was closed?"
 msgstr ""
+"Blev vinduet til indtastning af dine betalingsoplysninger ikke åbnet, eller "
+"blev det lukket?"
 
 #: pretix_bitpay/templates/pretix_bitpay/redirect.html:24
 msgid "Click here in order to open the window."
-msgstr ""
+msgstr "Klik her for at åbne vinduet."
 
 #: pretix_bitpay/views.py:125
 msgid "Your BitPay account has been disconnected."
-msgstr ""
+msgstr "Forbindelsen til din BitPay-konto er blevet afbrudt."
 
 #: pretix_bitpay/views.py:175
 msgid ""
 "Sorry, there was an error in the payment process. Please check the link in "
 "your emails to continue."
 msgstr ""
+"Beklager, der opstod en fejl under betalingsprocessen. Klik på linket i din "
+"e-mail for at fortsætte."
 
 #: pretix_bitpay/views.py:190
 msgid "You are already connected to BitPay."
-msgstr ""
+msgstr "Du er allerede logget ind på BitPay."
 
 #: pretix_bitpay/views.py:216 pretix_bitpay/views.py:225
 msgid "Communication with BitPay was not successful."
-msgstr ""
+msgstr "Det lykkedes ikke at oprette forbindelse til BitPay."
