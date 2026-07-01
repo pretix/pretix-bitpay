@@ -141,7 +141,7 @@ class BitPay(BasePaymentProvider):
                             ],
                         },
                     },
-                    salt="safe-redirect",
+                    salt="plugins:bitpay:redirect:safe-redirect-data",
                 )
             )
         else:
