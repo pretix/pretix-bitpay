@@ -32,7 +32,10 @@ logger = logging.getLogger(__name__)
 @xframe_options_exempt
 def redirect_view(request, *args, **kwargs):
     try:
-        data = signing.loads(request.GET.get("data", ""), salt="plugins:bitpay:redirect:safe-redirect-data")
+        data = signing.loads(
+            request.GET.get("data", ""),
+            salt="plugins:bitpay:redirect:safe-redirect-data",
+        )
     except signing.BadSignature:
         return HttpResponseBadRequest("Invalid parameter")
 
